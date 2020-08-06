@@ -74,7 +74,6 @@ a {
 }
 
 .content-wrapper {
-  margin: 0 auto;
   position: relative;
   font-size: $font-size-normal;
   min-height: 100vh;
@@ -89,8 +88,10 @@ a {
 
 .page-wrapper {
   flex-grow: 2;
+  margin: 0 auto;
   padding: 2rem 4rem;
   max-width: $content-width;
+  box-sizing: border-box;
 
   @include small-screen {
     padding: 1rem 2rem;
