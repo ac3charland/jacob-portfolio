@@ -1,10 +1,15 @@
 @import "../../globals.scss";
 
 .home {
-  /* CHANGE_ME 
-    This style only exists to demonstrate that the sticky footer 
-    goes below the fold when the content is larger than 100vh.
-    It should be removed.
-  */
-  height: 110rem
+  &__content-wrapper {
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    width: 100%;
+    max-width: $content-width;
+    box-sizing: border-box;
+
+    @include small-screen {
+      padding: 1rem 2rem;
+    }
+  }
 }

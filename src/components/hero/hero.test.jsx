@@ -1,12 +1,14 @@
-import HomePage from './home-page'
+import Hero from './hero'
 
-const cb = 'home'
+const cb = 'hero'
 
-describe('HomePage', () => {
+describe('Hero', () => {
     let props, render
 
     beforeEach(() => {
-        render = (changedProps = {}) => mount(<HomePage {...props} {...changedProps} />)
+        props = {}
+
+        render = (changedProps = {}) => mount(<Hero {...props} {...changedProps} />)
     })
 
     it('renders without crashing', () => {

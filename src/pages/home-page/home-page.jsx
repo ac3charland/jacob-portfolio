@@ -1,43 +1,17 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './home-page.scss'
-import {connect} from 'react-redux'
-import {markHomePageAsVisited} from '../../actions/mark-home-page'
-import PropTypes from 'prop-types'
+import Hero from '../../components/hero/hero'
 
 const cb = 'home'
 
-export default class HomePage extends Component {
+const HomePage = () => (
+    <div className={cb}>
+        <Hero />
+        <div className={`${cb}__content-wrapper`}>
+            <h1>Test content</h1>
+            <div style={{backgroundColor: 'aquamarine'}}>Long div</div>
+        </div>
+    </div>
+)
 
-    static propTypes = {
-        markAsVisited: PropTypes.func,
-        visited: PropTypes.bool,
-    }
-
-    componentDidMount() {
-        this.props.markAsVisited()
-    }
-
-    render() {
-
-        const {visited} = this.props
-
-        return (
-            <div className={cb}>
-                <h1 className={`${cb}__heading`}>Long home page!</h1> 
-                <p>(Footer is below the fold)</p>
-                <p>This page has {!visited ? 'not ' : ''}been marked as visited by Redux.</p>
-            </div>
-        )
-    }
-
-}
-
-export const mapStateToProps = state => ({
-    visited: state.app.homePageVisted,
-})
-
-const mapDispatchToProps = (dispatch) => ({
-    markAsVisited: () => dispatch(markHomePageAsVisited()),
-})
-
-export const ConnectedHomePage = connect(mapStateToProps, mapDispatchToProps)(HomePage)
+export default HomePage
