@@ -1,0 +1,39 @@
+@import "../../globals.scss";
+
+.calendar {
+    border-top: 1px solid $text-color;
+    margin-top: 4rem;
+    padding: 4rem 0;
+
+    &__heading {
+        font-size: $font-size-h4;
+        margin-bottom: 2rem;
+    }
+
+    &__event {
+        background-color: $background-green;
+        width: 60%;
+        margin: 2rem 0;
+        padding: 1rem;
+        color: white; 
+
+        @include small-screen {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        &-heading {
+            font-size: $font-size-h5;
+        }
+
+        &-date-time,
+        &-venue {
+            font-size: $font-size-h6;
+        }
+
+        &-venue-wrapper {
+            margin-top: 1rem;
+            text-align: right;
+        }
+    }
+}
