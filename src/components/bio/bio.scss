@@ -1,0 +1,47 @@
+@import "../../globals.scss";
+
+.bio {
+    &__flex {
+        display: flex;
+
+        @include small-screen {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__album-column {
+        text-align: center;
+    }
+
+    &__album-wrapper {
+        $album-width: 30rem;
+        width: $album-width;
+        max-width: 100%;
+        height: $album-width;
+        margin: 4.3rem auto 0;
+
+
+        background-color: $background-red;
+    }
+
+    &__album-caption {
+        margin-top: 1rem;
+    }
+
+    &__bio-column {
+        margin-left: 8rem;
+
+        @include small-screen {
+            margin: 0 0 2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__bio-heading {
+        font-size: $font-size-h4;
+        margin-bottom: 1rem;
+    }
+}

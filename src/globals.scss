@@ -11,8 +11,13 @@ $font-size-large: 1.5rem;
 $font-size-normal: 1.3rem;
 $font-size-small: 1.1rem;
 
-$secondary-background-color: lightgray;
-$link-color: black;
+$secondary-background-color: #ECE0D2;
+$primary-background-color: #F5EAE2;
+$background-red: #b85f44;
+$background-yellow: #b48031;
+$background-green: #4f825e;
+$text-color: #32334D;
+$link-color: $text-color;
 $link-hover-color: darkgray;
 
 @mixin small-screen {
