@@ -1,0 +1,51 @@
+@import "../../globals.scss";
+
+.media {
+    border-top: 1px solid $text-color;
+
+    margin-top: 4rem;
+    padding: 4rem 0 0;
+
+    &__heading {
+        font-size: $font-size-h4;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__album-section,
+    &__secondary-album-row {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__secondary-album-row:first-child {
+        margin-bottom: 3rem;
+    }
+
+    &__featured-album-wrapper,
+    &__secondary-albums-wrapper {
+        width: 50%;
+    }
+
+    &__album {
+        height: 20rem;
+        width: 20rem;
+        max-width: 100%;
+
+        &-large {
+            height: 43rem;
+            width: 35rem;
+            margin: 0 auto;
+
+            @include small-screen {
+                max-width: 100%;
+            }
+        }
+
+        &-iframe {
+            border: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
