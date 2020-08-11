@@ -3,6 +3,7 @@ import './home-page.scss'
 import Hero from '../../components/hero/hero'
 import Bio from '../../components/bio/bio'
 import Calendar, {mockEvents} from '../../components/calendar/calendar'
+import Media from '../../components/media/media'
 
 const cb = 'home'
 
@@ -12,6 +13,7 @@ const HomePage = () => (
         <div className={`${cb}__content-wrapper`}>
             <Bio/>
             <Calendar events={mockEvents}/>
+            <Media/>
         </div>
     </div>
 )

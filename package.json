@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@types/jest": "^26.0.9",
+    "@types/react": "^16.9.45",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -12,7 +14,8 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start": "BROWSER=none react-scripts start",
@@ -21,7 +24,7 @@
     "build": "react-scripts build",
     "jest": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .jsx --ext .js src cypress",
+    "lint": "eslint --ext .jsx --ext .js --ext .tsx --ext .ts src cypress",
     "backstop:test": "sh backstop/run-backstop.sh test",
     "backstop:report": "sh backstop/run-backstop.sh openReport",
     "backstop:approve": "sh backstop/run-backstop.sh approve",
