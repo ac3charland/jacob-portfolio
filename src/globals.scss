@@ -26,6 +26,12 @@ $link-hover-color: darkgray;
     }
 }
 
+@mixin below-width($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
 // Cross-browser animation mixins from https://joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
 @mixin animation($animate...) {
     $max: length($animate);

@@ -4,3 +4,7 @@ export interface Album {
     href: string
     text: string
 }
+
+export interface Video {
+    src: string
+}

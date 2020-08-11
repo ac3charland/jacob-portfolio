@@ -9,7 +9,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:jest/recommended',
-        'plugin:jsx-a11y/recommended'
+        'plugin:jsx-a11y/recommended',
     ],
     globals: {
         Atomics: 'readonly',
@@ -25,7 +25,24 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['*.spec.js', '*.test.jsx'],
+            files: ['*.ts', '*.tsx'],
+            extends: [
+                'plugin:@typescript-eslint/eslint-recommended',
+                'plugin:@typescript-eslint/recommended',
+            ],
+            plugins: [
+                '@typescript-eslint',
+            ],
+            rules: {
+                '@typescript-eslint/member-delimiter-style': ['error', {
+                    multiline: {
+                        delimiter: 'none'
+                    }
+                }]
+            }
+        },
+        {
+            files: ['*.spec.js', '*.test.jsx', '*.test.tsx'],
             globals: {
                 mount: 'readonly',
                 shallow: 'readonly',
@@ -44,7 +61,7 @@ module.exports = {
         }
     ],
     plugins: [
-        'react'
+        'react',
     ],
     settings: {
         react: {
