@@ -2,6 +2,9 @@ import {Album, Video} from './types'
 
 export const LESSON_PAGE_URL = '/lessons'
 
+// External URLs
+export const ALEX_PORTFOLIO_URL = 'https://www.alexcharland.com'
+
 // Redux Actions
 export const MARK_HOME_PAGE_AS_VISITED = 'MARK_HOME_PAGE_AS_VISITED'
 
