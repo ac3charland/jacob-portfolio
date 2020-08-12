@@ -1,14 +1,14 @@
-import SecondaryPage from './secondary-page'
+import LessonPage from './lesson-page'
 
-const cb = 'secondary'
+const cb = 'lessons'
 
-describe('SecondaryPage', () => {
+describe('LessonPage', () => {
     let props, render
 
     beforeEach(() => {
         props = {}
 
-        render = (changedProps = {}) => mount(<SecondaryPage {...props} {...changedProps} />)
+        render = (changedProps = {}) => mount(<LessonPage {...props} {...changedProps} />)
     })
 
     it('renders without crashing', () => {

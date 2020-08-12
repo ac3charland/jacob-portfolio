@@ -1,5 +1,5 @@
-const SecondaryPage = {
-    wrapper: '.secondary',
+const LessonPage = {
+    wrapper: '.lessons',
 }
 
-export default SecondaryPage
+export default LessonPage

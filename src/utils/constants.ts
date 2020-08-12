@@ -1,6 +1,6 @@
 import {Album, Video} from './types'
 
-export const SECONDARY_PAGE_URL = '/secondary'
+export const LESSON_PAGE_URL = '/lessons'
 
 // Redux Actions
 export const MARK_HOME_PAGE_AS_VISITED = 'MARK_HOME_PAGE_AS_VISITED'

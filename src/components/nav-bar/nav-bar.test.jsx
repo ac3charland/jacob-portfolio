@@ -15,7 +15,7 @@ describe('NavBar', () => {
         const component = render()
         expect(component.find(`.${cb}`).length).toEqual(1)
         expect(component.find(`.${cb}__home`).prop('href')).toEqual('/')
-        expect(component.find(`.${cb}__link`).prop('href')).toEqual('/secondary')
+        expect(component.find(`.${cb}__link`).prop('href')).toEqual('/lessons')
     })
 
     it('toggles between open and closed', () => {
