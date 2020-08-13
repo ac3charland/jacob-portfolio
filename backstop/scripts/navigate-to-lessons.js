@@ -1,5 +1,5 @@
 module.exports = function (chromy, scenario, vp) {
-    chromy.wait('#secondary-link')
-    chromy.click('#secondary-link')
+    chromy.wait('#lessons-link')
+    chromy.click('#lessons-link')
     chromy.wait(1000)
 }

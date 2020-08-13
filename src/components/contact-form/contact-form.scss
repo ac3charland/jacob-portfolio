@@ -30,6 +30,11 @@
         padding: 0.5rem;
     }
 
+    &__error {
+        color: $background-red;
+        padding-top: 0.5rem;
+    }
+
     &__submit {
         font-size: $font-size-h5;
         background-color: white;

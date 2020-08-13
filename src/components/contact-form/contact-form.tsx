@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './contact-form.scss'
+import {validateEmail, validateRequiredString, validateName} from '../../utils/form-validation'
 
 const cb = 'form'
 interface ContactFormProps {
@@ -19,14 +20,36 @@ interface FormElementProps {
 
 const ContactForm = (props: ContactFormProps): JSX.Element => {
     const {title} = props
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [subject, setSubject] = useState('')
-    const [message, setMessage] = useState('')
+    const [name, setName] = useState({value: '', isInvalid: false})
+    const [email, setEmail] = useState({value: '', isInvalid: false})
+    const [subject, setSubject] = useState({value: '', isInvalid: false})
+    const [message, setMessage] = useState({value: '', isInvalid: false})
+
+
+    const isFormValid = (): boolean => {
+        const isNameValid = validateName(name.value)
+        const isEmailValid = validateEmail(email.value)
+        const isSubjectValid = validateRequiredString(subject.value)
+        const isMessageValid = validateRequiredString(message.value)
+
+        if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid) {
+            setName({...name, isInvalid: !isNameValid})
+            setEmail({...email, isInvalid: !isEmailValid})
+            setSubject({...subject, isInvalid: !isSubjectValid})
+            setMessage({...message, isInvalid: !isMessageValid})
+            return false
+        }
+        return true
+    }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
+
+        if (isFormValid()) {
+            // Do stuff
+        }
     }
+
     return (
         <div className={cb}>
             {title && <h2 className={`${cb}__heading`}>{title}</h2>}
@@ -35,27 +58,27 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
                     id={`${cb}__name`}
                     title='Your Name'
                     type='text'
-                    value={name}
-                    changeHandler={(e): void => setName(e.currentTarget.value)}
-                    isInvalid={false}
+                    value={name.value}
+                    changeHandler={(e): void => setName({value: e.currentTarget.value, isInvalid: false})}
+                    isInvalid={name.isInvalid}
                     errorMsg='Please enter a name.'
                 />
                 <FormElement
                     id={`${cb}__email`}
                     title='Email'
-                    type='email'
-                    value={email}
-                    changeHandler={(e): void => setEmail(e.currentTarget.value)}
-                    isInvalid={false}
+                    type='text'
+                    value={email.value}
+                    changeHandler={(e): void => setEmail({value: e.currentTarget.value, isInvalid: false})}
+                    isInvalid={email.isInvalid}
                     errorMsg='Please enter a valid email.'
                 />
                 <FormElement
                     id={`${cb}__subject`}
                     title='Subject'
                     type='text'
-                    value={subject}
-                    changeHandler={(e): void => setSubject(e.currentTarget.value)}
-                    isInvalid={false}
+                    value={subject.value}
+                    changeHandler={(e): void => setSubject({value: e.currentTarget.value, isInvalid: false})}
+                    isInvalid={subject.isInvalid}
                     errorMsg='Please enter a subject.'
                 />
                 <FormElement
@@ -63,9 +86,9 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
                     id={`${cb}__message`}
                     title='Message'
                     type='text'
-                    value={message}
-                    changeHandler={(e): void => setMessage(e.currentTarget.value)}
-                    isInvalid={false}
+                    value={message.value}
+                    changeHandler={(e): void => setMessage({value: e.currentTarget.value, isInvalid: false})}
+                    isInvalid={message.isInvalid}
                     errorMsg='Please enter a message.'
                 />
                 <div className={`${cb}__form-element`}>
@@ -98,7 +121,7 @@ const FormElement = (props: FormElementProps): JSX.Element => {
                     value={value}
                     onChange={changeHandler}
                 />}
-            {isInvalid && <h3 className={`${cb}__error ${cb}__name-error-msg`}>{errorMsg}</h3>}
+            {isInvalid && <h3 className={`${cb}__error`}>{errorMsg}</h3>}
         </div>
     )
 }
