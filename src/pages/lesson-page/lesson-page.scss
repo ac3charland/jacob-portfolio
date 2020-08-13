@@ -78,6 +78,12 @@
       margin: 1rem 0;
       padding: 1rem 2rem;
       color: white;
+      @include transition(all 0.2s);
+
+      &:hover {
+        margin-left: 2rem;
+        padding-right: 0;
+      }
 
       @include small-screen {
         font-size: $font-size-h6;
