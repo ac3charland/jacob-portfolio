@@ -3,7 +3,6 @@ module.exports = function (chromy, scenario, vp) {
         chromy.wait(scenario.args.id)
         chromy.click(scenario.args.id)
         chromy.wait(1000)
-        chromy.click('.form__submit')
-        chromy.wait(500)
     }
+    
 }

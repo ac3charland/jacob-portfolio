@@ -20,7 +20,9 @@ module.exports = backstop.config({
     ],
     scenarios: [
         cs({label: 'home-page'}),
-        cs({label: 'lessons', onReadyScript: 'navigate-to-lessons.js'}),
-        cs({label: 'lessons-form-error', onReadyScript: 'trigger-form-error.js'}),
+        cs({label: 'lessons', onReadyScript: 'navigate-to-page.js', args: {id: '#lessons-link'}}),
+        cs({label: 'lessons-form-error', onReadyScript: 'trigger-form-error.js', args: {id: '#lessons-link'}}),
+        cs({label: 'contact', onReadyScript: 'navigate-to-page.js', args: {id: '#contact-link'}}),
+        cs({label: 'contact-page-form-error', onReadyScript: 'trigger-form-error.js', args: {id: '#contact-link'}}),
     ]
 })

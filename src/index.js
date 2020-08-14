@@ -8,8 +8,9 @@ import NavBar from './components/nav-bar/nav-bar'
 import Footer from './components/footer/footer'
 import HomePage from './pages/home-page/home-page'
 import LessonPage from './pages/lesson-page/lesson-page'
-import {LESSON_PAGE_URL} from './utils/constants'
 import makeStore from './store'
+import ContactPage from './pages/contact-page/contact-page'
+import {LESSON_PAGE_URL, CONTACT_PAGE_URL} from './utils/constants'
 
 const store = makeStore()
 
@@ -24,6 +25,8 @@ ReactDOM.render(
               <Switch>
                 <Route exact path='/' component={HomePage} />
                 <Route exact path={LESSON_PAGE_URL} component={LessonPage} />
+                <Route exact path={CONTACT_PAGE_URL} component={ContactPage} />
+                <Route path='*' component={HomePage} />
               </Switch>
             </div>
             <Footer />

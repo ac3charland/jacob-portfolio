@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './nav-bar.scss'
-import {LESSON_PAGE_URL} from '../../utils/constants'
+import {LESSON_PAGE_URL, CONTACT_PAGE_URL} from '../../utils/constants'
 
 const cb = 'navbar'
 
@@ -29,6 +29,7 @@ export default class NavBar extends Component {
                 <div className={`${cb}__links ${menuCSS}`}>
                     <button className={`icon ${menuCSS}`} onClick={() => this.toggleMenu()}><i className={`fa ${menuIcon}`}></i></button>
                     <a id={'lessons-link'} className={`${cb}__link ${menuCSS}`} href={LESSON_PAGE_URL}>Lessons</a>
+                    <a id={'contact-link'} className={`${cb}__link ${menuCSS}`} href={CONTACT_PAGE_URL}>Contact</a>
                 </div>
             </div>
         )

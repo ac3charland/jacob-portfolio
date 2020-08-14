@@ -1,6 +1,7 @@
 import {Album, Video} from './types'
 
 export const LESSON_PAGE_URL = '/lessons'
+export const CONTACT_PAGE_URL = '/contact'
 
 // External URLs
 export const ALEX_PORTFOLIO_URL = 'https://www.alexcharland.com'
