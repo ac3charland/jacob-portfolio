@@ -1,6 +1,6 @@
 import NavBar from '../page/nav-bar'
 import HomePage from '../page/home-page'
-import LessonPage from '../page/secondary-page'
+import LessonPage from '../page/lesson-page'
 
 context('Page Navigation', () => {
     beforeEach(() => {

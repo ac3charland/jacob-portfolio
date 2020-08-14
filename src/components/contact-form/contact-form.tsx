@@ -121,7 +121,7 @@ const FormElement = (props: FormElementProps): JSX.Element => {
                     value={value}
                     onChange={changeHandler}
                 />}
-            {isInvalid && <h3 className={`${cb}__error`}>{errorMsg}</h3>}
+            {isInvalid && <h3 className={`${cb}__error ${idString}-error`}>{errorMsg}</h3>}
         </div>
     )
 }
