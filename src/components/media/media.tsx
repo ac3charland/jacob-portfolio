@@ -1,11 +1,21 @@
 import React from 'react'
 import './media.scss'
 import {Album, Video} from '../../utils/types'
-import {StraightAheadFBlues, MaybeWeBeDreamin, OlderThanIAm, MorningLight, GoldKeyToTheCity, GenerallySpoken, DeadlyStare, Situ, FreightTrain} from '../../utils/constants'
+import {
+    DeadlyStare,
+    FreightTrain,
+    GenerallySpoken,
+    GoldKeyToTheCity,
+    MaybeWeBeDreamin,
+    MorningLight,
+    OlderThanIAm,
+    Situ,
+    StraightAheadFBlues,
+} from '../../utils/constants'
 
 const cb = 'media'
 
-const Media = () => (
+const Media = (): JSX.Element => (
     <div className={cb}>
         <h2 className={`${cb}__heading`}>Media</h2>
         <div className={`${cb}__album-section`}>
@@ -30,13 +40,13 @@ const Media = () => (
 
 
 
-const AlbumWrapper = ({isLarge, src, href, text}: Album) => (
+const AlbumWrapper = ({isLarge, src, href, text}: Album): JSX.Element => (
     <div className={isLarge ? `${cb}__album-large` : `${cb}__album`}>
         <iframe className={`${cb}__album-iframe`} title={text} src={src} seamless><a href={href}>{text}</a></iframe>
     </div>
 )
 
-const VideoWrapper = ({src}: Video) => (
+const VideoWrapper = ({src}: Video): JSX.Element => (
     <div className={`${cb}__video`}>
         <iframe className={`${cb}__video-iframe`} title={src} src={src} allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
     </div>

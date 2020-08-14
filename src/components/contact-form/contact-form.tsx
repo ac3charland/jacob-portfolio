@@ -8,7 +8,7 @@ interface ContactFormProps {
 }
 
 interface FormElementProps {
-    id: string
+    idString: string
     title: string
     type: string
     value: string
@@ -55,7 +55,7 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
             {title && <h2 className={`${cb}__heading`}>{title}</h2>}
             <form className={`${cb}__form`} onSubmit={handleSubmit}>
                 <FormElement
-                    id={`${cb}__name`}
+                    idString={`${cb}__name`}
                     title='Your Name'
                     type='text'
                     value={name.value}
@@ -64,7 +64,7 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
                     errorMsg='Please enter a name.'
                 />
                 <FormElement
-                    id={`${cb}__email`}
+                    idString={`${cb}__email`}
                     title='Email'
                     type='text'
                     value={email.value}
@@ -73,7 +73,7 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
                     errorMsg='Please enter a valid email.'
                 />
                 <FormElement
-                    id={`${cb}__subject`}
+                    idString={`${cb}__subject`}
                     title='Subject'
                     type='text'
                     value={subject.value}
@@ -83,7 +83,7 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
                 />
                 <FormElement
                     isTextArea
-                    id={`${cb}__message`}
+                    idString={`${cb}__message`}
                     title='Message'
                     type='text'
                     value={message.value}
@@ -100,14 +100,14 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
 }
 
 const FormElement = (props: FormElementProps): JSX.Element => {
-    const {id, title, type, value, changeHandler, isTextArea, isInvalid, errorMsg} = props
+    const {idString, title, type, value, changeHandler, isTextArea, isInvalid, errorMsg} = props
     return (
         <div className={`${cb}__form-element`}>
-            <label className={`${cb}__label`} htmlFor={id}><strong>{title}</strong></label>
+            <label className={`${cb}__label`} htmlFor={idString}><strong>{title}</strong></label>
             {isTextArea ?
                 <textarea
                     className={`${cb}__input`}
-                    id={id}
+                    id={idString}
                     rows={4}
                     name={title}
                     value={value}
@@ -115,7 +115,7 @@ const FormElement = (props: FormElementProps): JSX.Element => {
                 /> :
                 <input
                     className={`${cb}__input`}
-                    id={id}
+                    id={idString}
                     type={type}
                     name={title}
                     value={value}
