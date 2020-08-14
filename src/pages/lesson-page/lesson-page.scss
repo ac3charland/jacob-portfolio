@@ -1,0 +1,143 @@
+@import "../../globals.scss";
+
+.lessons {
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+
+  @include small-screen {
+    padding: 1rem 2rem;
+  }
+
+  @include small-screen {
+    flex-direction: column-reverse;
+  }
+
+  &__form-wrapper {
+    margin-left: 4rem;
+    flex-shrink: 2;
+
+    @include small-screen {
+      margin-left: 0;
+    }
+  }
+
+  &__heading {
+    font-size: $font-size-h2;
+    margin-bottom: 2rem;
+
+    @include small-screen {
+      font-size: $font-size-h3;
+    }
+  }
+
+  &__para {
+    font-size: $font-size-h4;
+
+    @include small-screen {
+      font-size: $font-size-large;
+    }
+
+    &-rates {
+      margin: 4rem 0;
+
+      @include small-screen {
+        margin: 3rem 0;
+        font-size: $font-size-h5;
+      }
+    }
+  }
+
+  &__flex-columns {
+    display: flex;
+
+    @include small-screen {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    width: 50%;
+
+    @include small-screen {
+      width: 100%;
+    }
+
+    h3 {
+      font-size: $font-size-h3;
+
+      @include small-screen {
+        font-size: $font-size-h4;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: block;
+    }
+
+    li {
+      font-size: $font-size-h5;
+      margin: 1rem 0;
+      padding: 1rem 2rem;
+      color: white;
+      @include transition(all 0.2s);
+
+      &:hover {
+        margin-left: 2rem;
+        padding-right: 0;
+      }
+
+      @include small-screen {
+        font-size: $font-size-h6;
+      }
+    }
+
+    &:last-child {
+      margin-left: 4rem;
+
+      @include small-screen {
+        margin-left: 0;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__red {
+    background-color: $background-red;
+  }
+
+  &__green {
+    background-color: $background-green;
+  }
+
+  &__yellow {
+    background-color: $background-yellow;
+  }
+
+  &__blue {
+    background-color: $background-blue;
+  }
+
+  &__photo-wrapper {
+    width: 35%;
+    min-width: 20rem;
+    max-height: 50vh;
+
+    @include small-screen {
+      display: none;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    padding-top: 7.3rem;
+    max-height: 50vh;
+    object-fit: cover;
+
+    @include small-screen {
+      padding-top: 0;
+    }
+  }
+}

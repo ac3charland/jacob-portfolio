@@ -1,0 +1,36 @@
+@import "../../globals.scss";
+
+.contact {
+  margin: 0 auto;
+  padding: 2rem 4rem;
+
+  @include small-screen {
+    padding: 1rem 2rem;
+  }
+
+  &__heading {
+    font-size: $font-size-h2;
+    margin: 2rem 0;
+
+    @include small-screen {
+      font-size: $font-size-h3;
+    }
+  }
+
+  &__sub-heading {
+    font-size: $font-size-h4;
+    margin-bottom: 2rem;
+
+    @include small-screen {
+      font-size: $font-size-h5;
+    }
+  }
+
+  &__form-wrapper {
+    width: 60%;
+
+    @include small-screen {
+      width: 100%;
+    }
+  }
+}
