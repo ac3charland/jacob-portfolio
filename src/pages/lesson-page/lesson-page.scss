@@ -6,6 +6,10 @@
   padding: 2rem 4rem;
 
   @include small-screen {
+    padding: 1rem 2rem;
+  }
+
+  @include small-screen {
     flex-direction: column-reverse;
   }
 
@@ -92,7 +96,7 @@
 
     &:last-child {
       margin-left: 4rem;
-      
+
       @include small-screen {
         margin-left: 0;
         margin-top: 2rem;
@@ -111,7 +115,7 @@
   &__yellow {
     background-color: $background-yellow;
   }
-  
+
   &__blue {
     background-color: $background-blue;
   }
