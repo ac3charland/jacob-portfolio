@@ -4,5 +4,4 @@ module.exports = function (chromy, scenario, vp) {
         chromy.click(scenario.args.id)
         chromy.wait(1000)
     }
-    
 }
