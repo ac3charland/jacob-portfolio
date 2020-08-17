@@ -11,6 +11,7 @@
   &__heading {
     font-size: $font-size-h2;
     margin: 2rem 0;
+    outline: none;
 
     @include small-screen {
       font-size: $font-size-h3;

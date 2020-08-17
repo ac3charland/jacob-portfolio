@@ -2,12 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import moment from 'moment'
 import './calendar.scss'
+import {CALENDAR_ID} from '../../utils/constants'
 
 const cb = 'calendar'
 
 const Calendar = ({events}) => (
     <div className={cb}>
-        <h2 className={`${cb}__heading`}>Calendar</h2>
+        <h2 id={CALENDAR_ID} tabIndex={-1} className={`${cb}__heading`}>Calendar</h2>
         {events ?
             events.map((event, idx) => <Event key={`${cb}-event-${idx}`} {...event} />) :
             <h3 className={`${cb}__no-events`}>No events scheduled</h3>

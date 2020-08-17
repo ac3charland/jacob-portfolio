@@ -15,14 +15,34 @@
     margin: 0;
   }
 
+  &__home {
+    text-decoration: none;
+    outline: none;
+    @include transition(all 0.2s);
+
+    &:hover,
+    &:focus {
+      @include scale(1.1);
+    }
+  }
+
   &__links {
     display: flex;
   }
 
   &__link {
     padding: 0.5rem 0;
+    color: $text-color;
     margin-left: 3rem;
     font-size: $font-size-large;
+    text-decoration: none;
+    @include transition(color 0.3s);
+    outline: none;
+
+    &:focus,
+    &:hover {
+      color: $link-hover-color;
+    }
   }
 
   .icon {

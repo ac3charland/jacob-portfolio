@@ -35,6 +35,7 @@ describe('Calendar', () => {
     it('correctly displays calendar events', () => {
         const component = render()
         expect(component.find(`.${cb}`).length).toEqual(1)
+        expect(component.find('#calendar').prop('tabIndex')).toEqual(-1)
         expect(component.find(`.${cb}__event`).length).toEqual(2)
         expect(component.find(`.${cb}__no-events`).length).toEqual(0)
         expect(component.find(`.${cb}__event`).at(0).text()).toEqual(

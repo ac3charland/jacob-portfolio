@@ -12,6 +12,7 @@ describe('Media', () => {
     it('renders without crashing', () => {
         const component = render()
         expect(component.find(`.${cb}`).length).toEqual(1)
+        expect(component.find('#media').prop('tabIndex')).toEqual(-1)
     })
 
     it('has correct featured album data', () => {
