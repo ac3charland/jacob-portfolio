@@ -11,13 +11,14 @@ import {
     OlderThanIAm,
     Situ,
     StraightAheadFBlues,
+    MEDIA_ID,
 } from '../../utils/constants'
 
 const cb = 'media'
 
 const Media = (): JSX.Element => (
     <div className={cb}>
-        <h2 className={`${cb}__heading`}>Media</h2>
+        <h2 id={MEDIA_ID} tabIndex={-1} className={`${cb}__heading`}>Media</h2>
         <div className={`${cb}__album-section`}>
             <div className={`${cb}__featured-album-wrapper`}>
                 <AlbumWrapper {...StraightAheadFBlues} />

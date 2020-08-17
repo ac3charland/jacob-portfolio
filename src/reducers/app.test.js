@@ -1,5 +1,5 @@
 import {app} from './app'
-import {MARK_HOME_PAGE_AS_VISITED} from '../utils/constants'
+import {ON_HOME_PAGE, LEAVING_HOME_PAGE} from '../utils/constants'
 
 describe('App Reducer', () => {
     let state
@@ -8,9 +8,14 @@ describe('App Reducer', () => {
         state = {a: 'b'}
     })
 
-    it('sets homePageVisted flag to true when MARK_HOME_PAGE_AS_VISITED is received', () => {
-        const newState = app(state, {type: MARK_HOME_PAGE_AS_VISITED})
-        expect(newState).toEqual({a: 'b', homePageVisted: true})
+    it('sets onHomePage flag to true when ON_HOME_PAGE is received', () => {
+        const newState = app(state, {type: ON_HOME_PAGE})
+        expect(newState).toEqual({a: 'b', onHomePage: true})
+    })
+
+    it('sets onHomePage flag to undefined when LEAVING_HOME_PAGE is received', () => {
+        const newState = app({...state, onHomePage: true}, {type: LEAVING_HOME_PAGE})
+        expect(newState).toEqual({a: 'b'})
     })
 
     it('handles unknown action', () => {

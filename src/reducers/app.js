@@ -1,9 +1,11 @@
-import {MARK_HOME_PAGE_AS_VISITED} from '../utils/constants'
+import {ON_HOME_PAGE, LEAVING_HOME_PAGE} from '../utils/constants'
 
 export function app(state = {}, action = {}) {
     switch(action.type) {
-        case MARK_HOME_PAGE_AS_VISITED:
-            return {...state, homePageVisted: true}
+        case ON_HOME_PAGE:
+            return {...state, onHomePage: true}
+        case LEAVING_HOME_PAGE:
+            return {...state, onHomePage: undefined}
         default:
             return state
     }

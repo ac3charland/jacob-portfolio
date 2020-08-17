@@ -1,14 +1,21 @@
 import {Album, Video} from './types'
 
+export const ROOT_URL = '/'
 export const LESSON_PAGE_URL = '/lessons'
 export const CONTACT_PAGE_URL = '/contact'
 
 // External URLs
 export const ALEX_PORTFOLIO_URL = 'https://www.alexcharland.com'
 
-// Redux Actions
-export const MARK_HOME_PAGE_AS_VISITED = 'MARK_HOME_PAGE_AS_VISITED'
+// Section IDs
+export const CALENDAR_ID = 'calendar'
+export const MEDIA_ID = 'media'
+export const LESSON_ID = 'lessons'
+export const CONTACT_ID = 'contact'
 
+// Redux Actions
+export const ON_HOME_PAGE = 'ON_HOME_PAGE'
+export const LEAVING_HOME_PAGE = 'LEAVING_HOME_PAGE'
 
 // Albums
 export const StraightAheadFBlues: Album = {
@@ -47,7 +54,6 @@ export const GoldKeyToTheCity: Album = {
 }
 
 // Videos
-
 export const GenerallySpoken: Video = {
     src: 'https://www.youtube.com/embed/eN_qReDGJRk',
 }

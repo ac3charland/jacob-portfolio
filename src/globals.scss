@@ -66,6 +66,14 @@ $link-hover-color: darkgray;
     }
 }
 
+@mixin scale($factor) {
+    -webkit-transform: scale($factor);
+    -moz-transform: scale($factor);
+    -ms-transform: scale($factor);
+    -o-transform: scale($factor);
+    transform: scale($factor);
+}
+
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;

@@ -1,12 +1,17 @@
 import HomePage from './home-page'
+import {Provider} from 'react-redux'
+import configureStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
 
+const mockStore = configureStore([thunk])
 const cb = 'home'
 
 describe('HomePage', () => {
-    let props, render
+    let props, render, store
 
     beforeEach(() => {
-        render = (changedProps = {}) => mount(<HomePage {...props} {...changedProps} />)
+        store = mockStore({})
+        render = (changedProps = {}) => mount(<Provider store={store}><HomePage {...props} {...changedProps} /></Provider>)
     })
 
     it('renders without crashing', () => {
