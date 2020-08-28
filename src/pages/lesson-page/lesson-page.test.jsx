@@ -1,4 +1,5 @@
 import LessonPage from './lesson-page'
+jest.mock('../../components/nav-bar/nav-bar', () => () => <></>)
 
 const cb = 'lessons'
 

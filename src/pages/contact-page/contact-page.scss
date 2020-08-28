@@ -1,11 +1,14 @@
 @import "../../globals.scss";
 
 .contact {
-  margin: 0 auto;
-  padding: 2rem 4rem;
+  &__page-wrapper {
+    padding: 2rem 4rem;
+    background-color: $primary-background-color;
+    flex-grow: 2;
 
-  @include small-screen {
-    padding: 1rem 2rem;
+    @include small-screen {
+      padding: 1rem 2rem;
+    }
   }
 
   &__heading {

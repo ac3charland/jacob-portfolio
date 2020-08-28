@@ -43,13 +43,13 @@ const Media = (): JSX.Element => (
 
 const AlbumWrapper = ({isLarge, src, href, text}: Album): JSX.Element => (
     <div className={isLarge ? `${cb}__album-large` : `${cb}__album`}>
-        <iframe className={`${cb}__album-iframe`} title={text} src={src} seamless><a href={href}>{text}</a></iframe>
+        <iframe className={`${cb}__album-iframe bs-ignore`} title={text} src={src} seamless><a href={href}>{text}</a></iframe>
     </div>
 )
 
 const VideoWrapper = ({src}: Video): JSX.Element => (
     <div className={`${cb}__video`}>
-        <iframe className={`${cb}__video-iframe`} title={src} src={src} allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+        <iframe className={`${cb}__video-iframe bs-ignore`} title={src} src={src} allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
     </div>
 )
 

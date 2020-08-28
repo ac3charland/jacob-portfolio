@@ -1,4 +1,5 @@
 import ContactPage from './contact-page'
+jest.mock('../../components/nav-bar/nav-bar', () => () => <></>)
 
 const cb = 'contact'
 

@@ -1,16 +1,19 @@
 @import "../../globals.scss";
 
 .lessons {
-  display: flex;
-  margin: 0 auto;
-  padding: 2rem 4rem;
+  &__page-wrapper {
+    display: flex;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    background-color: $primary-background-color;
 
-  @include small-screen {
-    padding: 1rem 2rem;
-  }
+    @include small-screen {
+      padding: 1rem 2rem;
+    }
 
-  @include small-screen {
-    flex-direction: column-reverse;
+    @include small-screen {
+      flex-direction: column-reverse;
+    }
   }
 
   &__form-wrapper {

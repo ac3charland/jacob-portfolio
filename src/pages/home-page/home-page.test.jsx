@@ -10,7 +10,7 @@ describe('HomePage', () => {
     let props, render, store
 
     beforeEach(() => {
-        store = mockStore({})
+        store = mockStore({app: {}})
         render = (changedProps = {}) => mount(<Provider store={store}><HomePage {...props} {...changedProps} /></Provider>)
     })
 
