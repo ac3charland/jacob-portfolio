@@ -1,6 +1,13 @@
 @import "../../globals.scss";
 
 .bio {
+    @include content-wrapper;
+    padding-top: 2rem;
+
+    @include small-screen {
+        padding-top: 1rem;
+    }
+
     &__flex {
         display: flex;
 

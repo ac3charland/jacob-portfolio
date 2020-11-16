@@ -1,6 +1,9 @@
 @import "../../globals.scss";
 
 .home {
+  &__parallax {
+    background-color: $primary-background-color;
+  }
   &__content-wrapper {
     margin: 0 auto;
     padding: 2rem 4rem;

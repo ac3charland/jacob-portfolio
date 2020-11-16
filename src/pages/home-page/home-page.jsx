@@ -25,16 +25,12 @@ const HomePage = () => {
 
     return (
         <div className={cb}>
-            <div className='flex'>
+            <div className={`${cb}__parallax`}>
                 <NavBar />
-                <div className='page-wrapper'>
-                    <Hero />
-                    <div className={`${cb}__content-wrapper`}>
-                        <Bio />
-                        <Calendar events={mockEvents} />
-                        <Media />
-                    </div>
-                </div>
+                <Hero />
+                <Bio />
+                <Calendar events={mockEvents} />
+                <Media />
                 <Footer />
             </div>
         </div>

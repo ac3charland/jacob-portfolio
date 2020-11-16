@@ -30,6 +30,18 @@ $link-hover-color: darkgray;
     }
 }
 
+@mixin content-wrapper {
+    margin: 0 auto;
+    padding: 0 4rem;
+    width: 100%;
+    max-width: $content-width;
+    box-sizing: border-box;
+
+    @include small-screen {
+      padding: 0 2rem;
+    }
+}
+
 @mixin below-width($width) {
     @media (max-width: $width) {
         @content;

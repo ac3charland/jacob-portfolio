@@ -18,23 +18,25 @@ const cb = 'media'
 
 const Media = (): JSX.Element => (
     <div className={cb}>
-        <h2 id={MEDIA_ID} tabIndex={-1} className={`${cb}__heading`}>Media</h2>
-        <div className={`${cb}__album-section`}>
-            <div className={`${cb}__featured-album-wrapper`}>
-                <AlbumWrapper {...StraightAheadFBlues} />
+        <div className={`${cb}__content-wrapper`}>
+            <h2 id={MEDIA_ID} tabIndex={-1} className={`${cb}__heading`}>Media</h2>
+            <div className={`${cb}__album-section`}>
+                <div className={`${cb}__featured-album-wrapper`}>
+                    <AlbumWrapper {...StraightAheadFBlues} />
+                </div>
+                <div className={`${cb}__secondary-albums-wrapper`}>
+                    <AlbumWrapper {...MaybeWeBeDreamin} />
+                    <AlbumWrapper {...OlderThanIAm} />
+                    <AlbumWrapper {...MorningLight} />
+                    <AlbumWrapper {...GoldKeyToTheCity} />
+                </div>
             </div>
-            <div className={`${cb}__secondary-albums-wrapper`}>
-                <AlbumWrapper {...MaybeWeBeDreamin} />
-                <AlbumWrapper {...OlderThanIAm} />
-                <AlbumWrapper {...MorningLight} />
-                <AlbumWrapper {...GoldKeyToTheCity} />
+            <div className={`${cb}__video-section`}>
+                <VideoWrapper {...GenerallySpoken} />
+                <VideoWrapper {...DeadlyStare} />
+                <VideoWrapper {...Situ} />
+                <VideoWrapper {...FreightTrain} />
             </div>
-        </div>
-        <div className={`${cb}__video-section`}>
-            <VideoWrapper {...GenerallySpoken} />
-            <VideoWrapper {...DeadlyStare} />
-            <VideoWrapper {...Situ} />
-            <VideoWrapper {...FreightTrain} />
         </div>
     </div>
 )

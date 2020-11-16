@@ -1,9 +1,13 @@
 @import "../../globals.scss";
 
 .calendar {
-    border-top: 1px solid $text-color;
-    margin-top: 4rem;
-    padding: 4rem 0 0;
+    @include content-wrapper;
+
+    &__content-wrapper {
+        border-top: 1px solid $text-color;
+        margin-top: 4rem;
+        padding: 4rem 0 0;
+    }
 
     &__heading {
         font-size: $font-size-h4;
@@ -16,7 +20,7 @@
         width: 60%;
         margin: 2rem 0;
         padding: 1rem;
-        color: white; 
+        color: white;
 
         @include small-screen {
             width: 100%;
