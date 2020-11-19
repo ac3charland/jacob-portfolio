@@ -31,6 +31,15 @@
   }
 }
 
+.parallax__solid {
+  z-index: 5;
+  background-color: $primary-background-color;
+}
+
+.parallax__window {
+  z-index: 2;
+}
+
 #group-1 .parallax__layer--base {
   background-color: green;
 }
@@ -39,13 +48,11 @@
   z-index: 5;
 }
 
-#group-2 .parallax__layer--back {
-  background-color: lightblue;
-}
-
-#group-3 .parallax__layer--base {
-  background-color: $primary-background-color;
+.parallax__layer--base {
   z-index: 5;
+}
+#group-4 {
+  z-index: 2;
 }
 
 #bg-image-1 {
@@ -84,7 +91,12 @@
   height: 100vh;
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  z-index: 3;
+}
+
+.center {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .mock-navbar {

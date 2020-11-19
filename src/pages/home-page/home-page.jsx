@@ -26,12 +26,12 @@ const HomePage = () => {
     return (
         <div className={cb}>
             <div className={`${cb}__parallax parallax`}>
-                <div id='group-1' className='parallax__group mock-navbar'>
+                <div className='parallax__group parallax__solid mock-navbar'>
                     <div className='parallax__layer parallax__layer--base'>
                         <NavBar />
                     </div>
                 </div>
-                <div id='group-2' className='parallax__group mock-hero'>
+                <div className='parallax__group parallax__window mock-hero'>
                     <div id='bg-image-1' className='parallax__layer parallax__layer--back'>
                     </div>
                     <div className='parallax__layer parallax__layer--base'>
@@ -41,14 +41,36 @@ const HomePage = () => {
                         </div>
                     </div>
                 </div>
-                <div id='group-3' className='parallax__group'>
+                <div className='parallax__group parallax__solid'>
                     <div className='parallax__layer parallax__layer--base'>
-                        <Bio />
+                        <div className='center'>
+                            <Bio />
+                        </div>
                     </div>
                 </div>
-                <Calendar events={mockEvents} />
-                <Media />
-                <Footer />
+                <div className='parallax__group parallax__window mock-hero'>
+                    <div id='bg-image-1' className='parallax__layer parallax__layer--back'>
+                    </div>
+                </div>
+                <div className='parallax__group parallax__solid'>
+                    <div className='parallax__layer parallax__layer--base'>
+                        <Calendar events={mockEvents} />
+                    </div>
+                </div>
+                <div className='parallax__group parallax__window mock-hero'>
+                    <div id='bg-image-1' className='parallax__layer parallax__layer--back'>
+                    </div>
+                </div>
+                <div className='parallax__group parallax__solid'>
+                    <div className='parallax__layer parallax__layer--base'>
+                        <Media />
+                    </div>
+                </div>
+                <div className='parallax__group parallax__solid'>
+                    <div className='parallax__layer parallax__layer--base'>
+                        <Footer />
+                    </div>
+                </div>
             </div>
         </div>
     )
