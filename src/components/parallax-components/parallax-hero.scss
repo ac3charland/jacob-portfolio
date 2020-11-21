@@ -1,36 +1,5 @@
 @import "../../globals.scss";
 
-.home {
-  &__parallax {
-    background-color: $primary-background-color;
-  }
-  &__content-wrapper {
-    margin: 0 auto;
-    padding: 2rem 4rem;
-    width: 100%;
-    max-width: $content-width;
-    box-sizing: border-box;
-
-    @include small-screen {
-      padding: 1rem 2rem;
-    }
-  }
-
-  &__hero-title-wrapper {
-    position: absolute;
-    left: 50%;
-    top: 80%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-
-  &__hero-title {
-    color: white;
-    text-align: center;
-    font-size: 4.2vw;
-  }
-}
-
 .parallax__solid {
   z-index: 5;
   background-color: $primary-background-color;

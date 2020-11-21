@@ -8,6 +8,9 @@ import Footer from '../../components/footer/footer'
 import Calendar, {mockEvents} from '../../components/calendar/calendar'
 import Media from '../../components/media/media'
 import {onHomePage, leavingHomePage} from '../../actions/navigation'
+import ParallaxWrapper from '../../components/parallax-components/parallax-wrapper'
+import ParallaxWindow from '../../components/parallax-components/parallax-window'
+import ParallaxHero from '../../components/parallax-components/parallax-hero'
 
 const cb = 'home'
 
@@ -26,51 +29,24 @@ const HomePage = () => {
     return (
         <div className={cb}>
             <div className={`${cb}__parallax parallax`}>
-                <div className='parallax__group parallax__solid mock-navbar'>
-                    <div className='parallax__layer parallax__layer--base'>
-                        <NavBar />
-                    </div>
-                </div>
-                <div className='parallax__group parallax__window mock-hero'>
-                    <div id='bg-image-1' className='parallax__layer parallax__layer--back'>
-                    </div>
-                    <div className='parallax__layer parallax__layer--base'>
-                        <div className={`${cb}__hero-title-wrapper`}>
-                            <div className={`${cb}__hero-title`}>PERCUSSIONIST</div>
-                            <div className={`${cb}__hero-title`}>EDUCATOR</div>
-                        </div>
-                    </div>
-                </div>
-                <div className='parallax__group parallax__solid'>
-                    <div className='parallax__layer parallax__layer--base'>
-                        <div className='center'>
-                            <Bio />
-                        </div>
-                    </div>
-                </div>
-                <div className='parallax__group parallax__window mock-hero'>
-                    <div id='bg-image-1' className='parallax__layer parallax__layer--back'>
-                    </div>
-                </div>
-                <div className='parallax__group parallax__solid'>
-                    <div className='parallax__layer parallax__layer--base'>
-                        <Calendar events={mockEvents} />
-                    </div>
-                </div>
-                <div className='parallax__group parallax__window mock-hero'>
-                    <div id='bg-image-1' className='parallax__layer parallax__layer--back'>
-                    </div>
-                </div>
-                <div className='parallax__group parallax__solid'>
-                    <div className='parallax__layer parallax__layer--base'>
-                        <Media />
-                    </div>
-                </div>
-                <div className='parallax__group parallax__solid'>
-                    <div className='parallax__layer parallax__layer--base'>
-                        <Footer />
-                    </div>
-                </div>
+                <ParallaxWrapper>
+                    <NavBar />
+                </ParallaxWrapper>
+                <ParallaxHero/>
+                <ParallaxWrapper>
+                    <Bio />
+                </ParallaxWrapper>
+                <ParallaxWindow />
+                <ParallaxWrapper>
+                    <Calendar events={mockEvents} />
+                </ParallaxWrapper>
+                <ParallaxWindow />
+                <ParallaxWrapper>
+                    <Media />
+                </ParallaxWrapper>
+                <ParallaxWrapper>
+                    <Footer />
+                </ParallaxWrapper>
             </div>
         </div>
     )

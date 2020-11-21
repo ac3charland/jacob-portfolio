@@ -14,7 +14,7 @@ const Bio = () => (
             </div>
             <div className={`${cb}__bio-column`}>
                 
-                <p><h2 className={`${cb}__bio-heading`}>Jacob Bicknase</h2> is a Chicago-based musician/educator/composer whose career has taken him all over the world. An experienced musician in multiple instruments and genres, he brings his unique approach to every project, performance, and rehearsal.</p>
+                <p><h2 className={`${cb}__bio-heading`}>Jacob Bicknase</h2> is a Chicago-based musician, educator, and composer. Experienced in multiple instruments and genres, he brings his unique approach to every project, performance, and rehearsal.</p>
                 <p>A recent transplant to the Chicago community, Jacob spent most of his life in Madison and small-town Wisconsin.  After growing up with a background in piano, Jacob found percussion as his next passion, continuing through his college degree at the University of Wisconsin Madison.  His travels have taken him across the US, Canada, Europe, Asia, Australia, and Latin America, gaining experience in many styles of music along the way.</p>
                 <p>Jacob feels at home in the classical community, graduating with a percussion performance degree, but is not afraid to genre-bend into Afro-Cuban, Afro-Brazilian, Jazz, Rock, and R&B.  He has been fortunate enough to share the stage with acts such as:</p>
                 <p className={`${cb}__artists`}>Juan de Marcos Gonzalez, Richard Davis, Freddy Cole, Charles Bradley, Lucas Nelson, Clyde Stubblefield, Derek Trucks and Susan Tedeschi</p>

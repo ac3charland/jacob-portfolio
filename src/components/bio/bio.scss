@@ -3,9 +3,11 @@
 .bio {
     @include content-wrapper;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 
     @include small-screen {
         padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
     &__flex {
