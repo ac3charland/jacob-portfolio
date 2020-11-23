@@ -36,11 +36,11 @@ const HomePage = () => {
                 <ParallaxWrapper>
                     <Bio />
                 </ParallaxWrapper>
-                <ParallaxWindow />
+                <ParallaxWindow zIndex={4} positionOffset={'50%'} />
                 <ParallaxWrapper>
                     <Calendar events={mockEvents} />
                 </ParallaxWrapper>
-                <ParallaxWindow />
+                <ParallaxWindow zIndex={2} positionOffset={'80%'} />
                 <ParallaxWrapper>
                     <Media />
                 </ParallaxWrapper>

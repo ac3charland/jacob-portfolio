@@ -2,11 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './parallax-window.scss'
 
-const ParallaxWindow = () => (
-    <div className='parallax__group parallax__window mock-hero'>
-        <div id='bg-image-1' className='parallax__layer parallax__layer--back'>
-        </div>
+const cb = 'parallax-window'
+
+const ParallaxWindow = ({zIndex, positionOffset, yOffset}) => (
+    <div className={cb} style={{zIndex}}>
+        <div className={`${cb}__image`} style={{backgroundPositionY: positionOffset}}/>
     </div>
 )
+
+ParallaxWindow.propTypes = {
+    zIndex: PropTypes.number,
+    positionOffset: PropTypes.string,
+    yOffset: PropTypes.string,
+}
 
 export default ParallaxWindow
