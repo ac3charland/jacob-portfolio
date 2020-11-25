@@ -15,9 +15,9 @@
     transform: translate3d(0, -20%, -300px) scale(2.5);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: 0;
+    background-position-x: center;
     background-image: url("../../images/hero.jpg");
     z-index: 0;
-    height: 70vh;
+    height: $hero-image-height;
   }
 }

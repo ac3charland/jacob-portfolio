@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import './home-page.scss'
-import Hero from '../../components/hero/hero'
 import Bio from '../../components/bio/bio'
 import NavBar from '../../components/nav-bar/nav-bar'
 import Footer from '../../components/footer/footer'
@@ -36,7 +35,7 @@ const HomePage = () => {
                 <ParallaxWrapper>
                     <Bio />
                 </ParallaxWrapper>
-                <ParallaxWindow zIndex={4} positionOffset={'50%'} />
+                <ParallaxWindow zIndex={3} positionOffset={'50%'} />
                 <ParallaxWrapper>
                     <Calendar events={mockEvents} />
                 </ParallaxWrapper>

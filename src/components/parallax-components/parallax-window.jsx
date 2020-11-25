@@ -4,7 +4,7 @@ import './parallax-window.scss'
 
 const cb = 'parallax-window'
 
-const ParallaxWindow = ({zIndex, positionOffset, yOffset}) => (
+const ParallaxWindow = ({zIndex, positionOffset}) => (
     <div className={cb} style={{zIndex}}>
         <div className={`${cb}__image`} style={{backgroundPositionY: positionOffset}}/>
     </div>
@@ -13,7 +13,6 @@ const ParallaxWindow = ({zIndex, positionOffset, yOffset}) => (
 ParallaxWindow.propTypes = {
     zIndex: PropTypes.number,
     positionOffset: PropTypes.string,
-    yOffset: PropTypes.string,
 }
 
 export default ParallaxWindow

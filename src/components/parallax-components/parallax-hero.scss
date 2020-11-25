@@ -1,94 +1,38 @@
 @import "../../globals.scss";
 
-.parallax__solid {
-  z-index: 5;
-  background-color: $primary-background-color;
-}
-
-.parallax__window {
-  z-index: 2;
-}
-
-.parallax__layer--base {
-  z-index: 5;
-}
-
-#bg-image-1 {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 0 0%;
-  background-image: url("../../images/hero.jpg");
-  z-index: 0;
-}
-
-.debug {
-  position: fixed;
-  top: 0;
-  left: 0.5em;
-  z-index: 999;
-  background: rgba(0, 0, 0, 0.85);
-  color: white;
-  padding: 0.5rem;
-  border-radius: 0 0 5px 5px;
-}
-
-.parallax {
-  perspective: 250px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  font-size: 200%;
-}
-
-.debug-on .parallax__group {
-  transform: translate3d(700px, 0, -800px) rotateY(30deg);
-}
-
-.parallax__group {
+.hero {
   position: relative;
-  height: 100vh;
   transform-style: preserve-3d;
-  transition: transform 0.5s;
+  height: $hero-image-height;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.2);
 
-  &--solid {
-    height: auto;
+  &__background-layer {
+    transform: translateZ(-300px) scale(2.5);
+    position: absolute;
+    top: -5vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 0;
+    background-image: url("../../images/hero.jpg");
   }
-}
 
-.center {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.mock-navbar {
-  height: 4rem;
-}
-
-.mock-hero {
-  height: 70vh;
-}
-
-.parallax__layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  &--base {
-    position: relative;
+  &__hero-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding-bottom: 4vh;
+    box-sizing: border-box;
   }
-}
 
-.debug-on .parallax__layer {
-  box-shadow: 0 0 0 2px black;
-}
-
-.parallax__layer--base {
-  transform: translateZ(0);
-  z-index: 4;
-}
-.parallax__layer--back {
-  transform: translateZ(-300px) scale(2.5);
+  &__hero-title {
+    color: white;
+    text-align: center;
+    font-size: 5vw;
+  }
 }
