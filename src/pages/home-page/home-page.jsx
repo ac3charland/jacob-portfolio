@@ -27,7 +27,7 @@ const HomePage = () => {
 
     return (
         <div className={cb}>
-            <div className={`${cb}__parallax parallax`}>
+            <div className={`${cb}__parallax`}>
                 <ParallaxWrapper>
                     <NavBar />
                 </ParallaxWrapper>
