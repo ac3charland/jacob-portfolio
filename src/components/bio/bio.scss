@@ -37,12 +37,14 @@
 
     &__bio-column {
         margin-left: 8rem;
-
+        font-family: $serif;
+        
         @include small-screen {
             margin: 0 0 2rem;
         }
-
+        
         p {
+            font-size: $font-size-h6;
             margin-bottom: 1rem;
             text-align: justify;
         }
@@ -53,11 +55,14 @@
         margin-bottom: 1rem;
         text-align: left;
         display: inline;
+        font-weight: 600; 
+        font-family: $sans-serif;
     }
 
     &__artists {
         font-weight: bold;
-        font-size: $font-size-h5;
+        font-size: $font-size-h4;
+        font-family: $sans-serif;
         padding: 2rem 0;
     }
 }

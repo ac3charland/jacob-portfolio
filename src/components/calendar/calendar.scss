@@ -27,16 +27,23 @@
 
         &-heading {
             font-size: $font-size-h5;
+            font-weight: 300;
         }
 
         &-date-time,
         &-venue {
             font-size: $font-size-h6;
+            font-family: $serif;
         }
 
         &-venue-wrapper {
             margin-top: 1rem;
             text-align: right;
+        }
+
+        &-address {
+            font-weight: 300;
+            
         }
     }
 }

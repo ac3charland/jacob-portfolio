@@ -28,8 +28,8 @@ const Event = ({title, venue, address, city, state, zip, dateTime}) => (
         <h4 className={`${cb}__event-date-time`}>{moment(dateTime).format('dddd, MMMM Do, h:mm a')}</h4>
         <div className={`${cb}__event-venue-wrapper`}>
             <h4 className={`${cb}__event-venue`}>{venue}</h4>
-            <h4>{address}</h4>
-            <h4>{city}, {state} {zip}</h4>
+            <h4 className={`${cb}__event-address`}>{address}</h4>
+            <h4 className={`${cb}__event-address`}>{city}, {state} {zip}</h4>
         </div>
     </div>
 )
