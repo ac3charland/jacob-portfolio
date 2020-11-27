@@ -17,7 +17,7 @@ import {
 const cb = 'media'
 
 const Media = (): JSX.Element => (
-    <div className={cb}>
+    <div id='backstop-media' className={cb}>
         <div className={`${cb}__content-wrapper`}>
             <h2 id={MEDIA_ID} tabIndex={-1} className={`${cb}__heading`}>Media</h2>
             <div className={`${cb}__album-section`}>

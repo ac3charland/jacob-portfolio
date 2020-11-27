@@ -7,7 +7,7 @@ import {CALENDAR_ID} from '../../utils/constants'
 const cb = 'calendar'
 
 const Calendar = ({events}) => (
-    <div className={cb}>
+    <div id='backstop-calendar' className={cb}>
         <div className={`${cb}__content-wrapper`}>
             <h2 id={CALENDAR_ID} tabIndex={-1} className={`${cb}__heading`}>Calendar</h2>
             {events ?

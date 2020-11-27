@@ -20,6 +20,9 @@ module.exports = backstop.config({
     ],
     scenarios: [
         cs({label: 'home-page'}),
+        cs({label: 'home-page__bio', onReadyScript: 'scroll-on-homepage.js', args: {selector: '#backstop-bio'}}),
+        cs({label: 'home-page__calendar', onReadyScript: 'scroll-on-homepage.js', args: {selector: '#backstop-calendar'}}),
+        cs({label: 'home-page__media', onReadyScript: 'scroll-on-homepage.js', args: {selector: '#backstop-media'}}),
         cs({label: 'lessons', onReadyScript: 'navigate-to-page.js', args: {id: '#lessons-link'}}),
         cs({label: 'lessons-form-error', onReadyScript: 'trigger-form-error.js', args: {id: '#lessons-link'}}),
         cs({label: 'contact', onReadyScript: 'navigate-to-page.js', args: {id: '#contact-link'}}),

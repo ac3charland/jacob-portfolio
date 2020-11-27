@@ -11,7 +11,7 @@ const ParallaxWrapper = props => (
 )
 
 ParallaxWrapper.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element),
+    children: PropTypes.element,
 }
 
 export default ParallaxWrapper
