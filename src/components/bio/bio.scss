@@ -57,6 +57,10 @@
         display: inline;
         font-weight: 600; 
         font-family: $sans-serif;
+
+        @include small-screen {
+            font-size: $font-size-h3;
+        }
     }
 
     &__artists {
