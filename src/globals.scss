@@ -24,9 +24,23 @@ $text-color: #32334D;
 $link-color: $text-color;
 $link-hover-color: darkgray;
 
+$hero-image-height: 80vh;
+
 @mixin small-screen {
     @media (max-width: 700px) {
         @content;
+    }
+}
+
+@mixin content-wrapper {
+    margin: 0 auto;
+    padding: 0 4rem;
+    width: 100%;
+    max-width: $content-width;
+    box-sizing: border-box;
+
+    @include small-screen {
+      padding: 0 2rem;
     }
 }
 

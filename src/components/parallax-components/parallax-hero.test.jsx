@@ -1,14 +1,14 @@
-import Hero from './hero'
+import ParallaxHero from './parallax-hero'
 
 const cb = 'hero'
 
-describe('Hero', () => {
+describe('ParallaxHero', () => {
     let props, render
 
     beforeEach(() => {
         props = {}
 
-        render = (changedProps = {}) => mount(<Hero {...props} {...changedProps} />)
+        render = (changedProps = {}) => mount(<ParallaxHero {...props} {...changedProps} />)
     })
 
     it('renders without crashing', () => {

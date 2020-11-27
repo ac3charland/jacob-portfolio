@@ -1,10 +1,11 @@
 import React from 'react'
-import './hero.scss'
+import './parallax-hero.scss'
 
 const cb = 'hero'
 
-const Hero = () => (
+const ParallaxHero = () => (
     <div className={cb}>
+        <div className={`${cb}__background-layer`} />
         <div className={`${cb}__hero-title-wrapper`}>
             <div className={`${cb}__hero-title`}>PERCUSSIONIST</div>
             <div className={`${cb}__hero-title`}>EDUCATOR</div>
@@ -12,4 +13,4 @@ const Hero = () => (
     </div>
 )
 
-export default Hero
+export default ParallaxHero

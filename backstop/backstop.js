@@ -10,7 +10,7 @@ const baseConfig = {
 
 const baseScenario = {
     url: 'http://localhost:3000',
-    hideSelectors: [],
+    hideSelectors: ['.bs-ignore'],
     removeSelectors: [],
     selectorExpansion: true,
     selectors: ['document'],

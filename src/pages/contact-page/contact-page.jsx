@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import './contact-page.scss'
 import ContactForm from '../../components/contact-form/contact-form'
+import NavBar from '../../components/nav-bar/nav-bar'
+import Footer from '../../components/footer/footer'
 import {CONTACT_ID} from '../../utils/constants'
 
 const cb = 'contact'
@@ -16,11 +18,18 @@ const ContactPage = () => {
 
     return (
         <div className={cb}>
-            <h2 id={CONTACT_ID} tabIndex={-1} className={`${cb}__heading`}>Live and Studio Work</h2>
-            <h3 className={`${cb}__sub-heading`}>Please use contact form below to discuss project and rates.</h3>
-            <div className={`${cb}__form-wrapper`}>
-                <ContactForm />
+            <div className='flex'>
+                <NavBar />
+                <div className={`${cb}__page-wrapper`}>
+                    <h2 id={CONTACT_ID} tabIndex={-1} className={`${cb}__heading`}>Live and Studio Work</h2>
+                    <h3 className={`${cb}__sub-heading`}>Please use contact form below to discuss project and rates.</h3>
+                    <div className={`${cb}__form-wrapper`}>
+                        <ContactForm />
+                    </div>
+                </div>
+                <Footer />
             </div>
+            
         </div>
     )
 }

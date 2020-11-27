@@ -1,6 +1,15 @@
 @import "../../globals.scss";
 
 .home {
+  &__parallax {
+    background-color: $primary-background-color;
+    perspective: 250px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-size: 200%;
+  }
+
   &__content-wrapper {
     margin: 0 auto;
     padding: 2rem 4rem;

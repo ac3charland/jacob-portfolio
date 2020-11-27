@@ -7,12 +7,14 @@ import {CALENDAR_ID} from '../../utils/constants'
 const cb = 'calendar'
 
 const Calendar = ({events}) => (
-    <div className={cb}>
-        <h2 id={CALENDAR_ID} tabIndex={-1} className={`${cb}__heading`}>Calendar</h2>
-        {events ?
-            events.map((event, idx) => <Event key={`${cb}-event-${idx}`} {...event} />) :
-            <h3 className={`${cb}__no-events`}>No events scheduled</h3>
-        }
+    <div id='backstop-calendar' className={cb}>
+        <div className={`${cb}__content-wrapper`}>
+            <h2 id={CALENDAR_ID} tabIndex={-1} className={`${cb}__heading`}>Calendar</h2>
+            {events ?
+                events.map((event, idx) => <Event key={`${cb}-event-${idx}`} {...event} />) :
+                <h3 className={`${cb}__no-events`}>No events scheduled</h3>
+            }
+        </div>
     </div>
 )
 

@@ -1,10 +1,19 @@
 @import "../../globals.scss";
 
 .media {
-    border-top: 1px solid $text-color;
-    margin-top: 4rem;
-    padding: 4rem 0 0;
+    @include content-wrapper;
+    
+    padding-bottom: 2rem;
+    @include small-screen {
+        padding-bottom: 1rem;
+    }
+
     $cutoff: 1000px;
+
+    &__content-wrapper {
+        margin-top: 4rem;
+        padding: 4rem 0 0;
+    }
 
     &__heading {
         font-size: $font-size-h4;
@@ -44,11 +53,13 @@
         width: 20rem;
         max-width: 100%;
         margin: 1rem;
+        background-color: $background-blue;
 
         &-large {
             height: 43rem;
             width: 35rem;
             margin: 0 auto;
+            background-color: $background-blue;
 
             @include below-width($cutoff) {
                 max-width: 100%;
@@ -72,8 +83,8 @@
     &__video {
         width: 45%;
         height: 30rem;
-        padding: 2rem;
-        margin: 0 auto;
+        margin: 2rem auto;
+        background-color: $background-blue;
 
         @include below-width($cutoff) {
             width: 100%;

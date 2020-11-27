@@ -1,0 +1,7 @@
+@import "../../globals.scss";
+
+.parallax-wrapper {
+  position: relative;
+  z-index: 5;
+  background-color: $primary-background-color;
+}
