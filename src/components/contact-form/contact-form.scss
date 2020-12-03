@@ -39,14 +39,15 @@
     &__submit {
         font-size: $font-size-h5;
         background-color: $secondary-background-color;
+        color: white;
         border: 1px solid gray;
         border-radius: 5px;
         padding: 1rem 2rem;
         @include transition(0.2s all);
 
         &:hover {
-            background-color: $background-blue;
-            color: white;
+            background-color: $primary-background-color;
+            color: $text-color;
             cursor: pointer;
         }
     }

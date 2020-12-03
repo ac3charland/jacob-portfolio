@@ -9,7 +9,9 @@ const cb = 'calendar'
 const Calendar = ({events}) => (
     <div id='backstop-calendar' className={cb}>
         <div className={`${cb}__content-wrapper`}>
-            <h2 id={CALENDAR_ID} tabIndex={-1} className={`${cb}__heading`}>Calendar</h2>
+            <h2 id={CALENDAR_ID} tabIndex={-1} className={`${cb}__heading`}>
+                <span className={`${cb}__heading-background`}>Calendar</span>
+            </h2>
             {events ?
                 events.map((event, idx) => <Event key={`${cb}-event-${idx}`} {...event} />) :
                 <h3 className={`${cb}__no-events`}>No events scheduled</h3>

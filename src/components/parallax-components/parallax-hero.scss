@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: 0;
-    background-image: url("../../images/hero.jpg");
+    background-image: url("../../images/hero-bw.jpeg");
   }
 
   &__hero-title-wrapper {
@@ -35,5 +35,9 @@
     text-align: center;
     font-size: 5vw;
     font-weight: 300;
+
+    @include small-screen {
+      font-size: $font-size-h2;
+    }
   }
 }

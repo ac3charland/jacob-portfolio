@@ -7,7 +7,7 @@
   margin: 0 auto;
   width: 100%;
   box-sizing: border-box;
-  background-color: $secondary-background-color;
+  background-color: $primary-background-color;
   z-index: 2;
 
   &__heading {
@@ -33,18 +33,28 @@
   }
 
   &__link {
-    padding: 0.5rem 0;
+    padding: 0.5rem;
     color: $text-color;
     margin-left: 3rem;
     font-size: $font-size-large;
     font-family: $sans-serif;
     text-decoration: none;
-    @include transition(color 0.3s);
+    @include transition(all 0.3s);
     outline: none;
+    background-image: url("../../images/brush-stroke-banner-6-red.png");
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position-x: left;
 
     &:focus,
     &:hover {
-      color: $link-hover-color;
+      color: white;
+      background-size: 100% 100%;
+
+      @include small-screen {
+        background-size: 0% 100%;
+        color: inherit;
+      }
     }
   }
 
@@ -58,7 +68,7 @@
     padding: 1rem 2rem;
 
     &__heading {
-      font-size: $font-size-small;
+      font-size: $font-size-h6;
     }
 
     &__links {
@@ -67,7 +77,6 @@
     }
 
     &__link {
-      background-color: $secondary-background-color;
       margin: 0 -2rem 0 0;
       padding: 1rem;
       font-size: $font-size-small;

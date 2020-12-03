@@ -38,15 +38,19 @@
     &__bio-column {
         margin-left: 8rem;
         font-family: $serif;
-        
+
         @include small-screen {
             margin: 0 0 2rem;
         }
-        
+
         p {
             font-size: $font-size-h6;
             margin-bottom: 1rem;
             text-align: justify;
+
+            @include small-screen {
+                font-size: $font-size-large;
+            }
         }
     }
 
@@ -55,11 +59,18 @@
         margin-bottom: 1rem;
         text-align: left;
         display: inline;
-        font-weight: 600; 
+        font-weight: 300;
         font-family: $sans-serif;
+        background-image: url("../../images/brush-stroke-banner-6-red.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position-x: left;
+        color: white;
+        padding: 0 4rem;
 
         @include small-screen {
-            font-size: $font-size-h3;
+            font-size: $font-size-h4;
+            display: block;
         }
     }
 
@@ -68,5 +79,9 @@
         font-size: $font-size-h4;
         font-family: $sans-serif;
         padding: 2rem 0;
+
+        @include small-screen {
+            font-size: $font-size-h5;
+        }
     }
 }
