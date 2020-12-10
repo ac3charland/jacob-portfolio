@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './contact-form.scss'
 import {validateEmail, validateRequiredString, validateName} from '../../utils/form-validation'
+import Axios from 'axios'
 
 const cb = 'form'
 interface ContactFormProps {
@@ -46,7 +47,19 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
         e.preventDefault()
 
         if (isFormValid()) {
-            // Do stuff
+            const body = {
+                name: name.value,
+                email: email.value,
+                subject: subject.value,
+                message: message.value,
+            }
+            Axios.post('/api/contact', body)
+                .then(res => {
+                    // Response stuff
+                })
+                .catch(e => {
+                    // Error handling
+                })
         }
     }
 
