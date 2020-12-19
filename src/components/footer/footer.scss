@@ -3,7 +3,22 @@
 .footer {
     text-align: center;
     padding: 1rem 0;
-    background-color: $secondary-background-color;
+    background-color: $primary-background-color;
+    color: white;
+
+    &__brush {
+        margin: 0 auto;
+        padding: 1rem 6rem;
+        display: inline-block;
+        background-image: url("../../images/brush-stroke-banner-6-red.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position-x: center;
+
+        @include small-screen {
+            padding: 1rem 5rem;
+        }
+    }
 
     &__text {
         margin: 0.5rem auto;
@@ -11,6 +26,14 @@
     }
 
     &__disclaimer {
+        a {
+            @include transition(color 0.3s);
+            color: white;
+
+            &:hover {
+                color: gray;
+            }
+        }
         font-size: 10px;
     }
 }

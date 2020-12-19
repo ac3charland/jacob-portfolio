@@ -28,22 +28,22 @@ const LessonPage = () => {
                     <div className={`${cb}__form-wrapper`}>
                         <h2 id={LESSON_ID} tabIndex={-1} className={`${cb}__heading`}>Lessons</h2>
                         <p className={`${cb}__para`}><strong>Currently accepting students of all ages in piano and percussion.</strong></p>
-                        <p className={`${cb}__para ${cb}__para-rates`}>Rates are <strong>$45/hour</strong> or <strong>$30/half hour</strong></p>
+                        <p className={`${cb}__para ${cb}__para-rates`}>Rates are <strong>$40/hour</strong> or <strong>$25/half hour</strong></p>
                         <div className={`${cb}__flex-columns`}>
                             <div className={`${cb}__column`}>
                                 <h3>Percussion</h3>
                                 <ul>
-                                    <li className={`${cb}__red`}>Drum Set</li>
-                                    <li className={`${cb}__green`}>School Band/Orchestral Percussion</li>
-                                    <li className={`${cb}__yellow`}>Latin American/Brazilian Percussion</li>
+                                    <li className={`${cb}__category`}>Drum Set</li>
+                                    <li className={`${cb}__category`}>School Band/Orchestral Percussion</li>
+                                    <li className={`${cb}__category`}>Latin American/Brazilian Percussion</li>
                                 </ul>
                             </div>
                             <div className={`${cb}__column`}>
                                 <h3>Piano</h3>
                                 <ul>
-                                    <li className={`${cb}__green`}>Classical</li>
-                                    <li className={`${cb}__red`}>Jazz/Blues</li>
-                                    <li className={`${cb}__blue`}>Rock</li>
+                                    <li className={`${cb}__category`}>Classical</li>
+                                    <li className={`${cb}__category`}>Jazz/Blues</li>
+                                    <li className={`${cb}__category`}>Rock</li>
                                 </ul>
                             </div>
                         </div>

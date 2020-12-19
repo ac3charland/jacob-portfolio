@@ -21,8 +21,7 @@ const ContactPage = () => {
             <div className='flex'>
                 <NavBar />
                 <div className={`${cb}__page-wrapper`}>
-                    <h2 id={CONTACT_ID} tabIndex={-1} className={`${cb}__heading`}>Live and Studio Work</h2>
-                    <h3 className={`${cb}__sub-heading`}>Please use contact form below to discuss project and rates.</h3>
+                    <h2 id={CONTACT_ID} tabIndex={-1} className={`${cb}__heading`}>Contact</h2>
                     <div className={`${cb}__form-wrapper`}>
                         <ContactForm />
                     </div>

@@ -8,13 +8,23 @@
     }
 
     &__heading {
-        font-size: $font-size-h4;
+        font-size: $font-size-h2;
+        font-weight: 300;
         margin-bottom: 2rem;
         outline: none;
+        color: white;
+
+        &-background {
+            padding: 0 3rem;
+            background-image: url("../../images/brush-stroke-banner-6-red.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position-x: center;
+        }
     }
 
     &__event {
-        background-color: $background-green;
+        background-color: $secondary-background-color;
         width: 60%;
         margin: 2rem 0;
         padding: 1rem;
@@ -27,16 +37,22 @@
 
         &-heading {
             font-size: $font-size-h5;
+            font-weight: 300;
         }
 
         &-date-time,
         &-venue {
             font-size: $font-size-h6;
+            font-family: $serif;
         }
 
         &-venue-wrapper {
             margin-top: 1rem;
             text-align: right;
+        }
+
+        &-address {
+            font-weight: 300;
         }
     }
 }

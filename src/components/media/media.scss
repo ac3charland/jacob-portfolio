@@ -11,12 +11,12 @@
     $cutoff: 1000px;
 
     &__content-wrapper {
-        margin-top: 4rem;
         padding: 4rem 0 0;
     }
 
     &__heading {
-        font-size: $font-size-h4;
+        font-size: $font-size-h2;
+        font-weight: 300;
         text-align: center;
         margin-bottom: 2rem;
         outline: none;
@@ -53,13 +53,13 @@
         width: 20rem;
         max-width: 100%;
         margin: 1rem;
-        background-color: $background-blue;
+        background-color: $secondary-background-color;
 
         &-large {
             height: 43rem;
             width: 35rem;
             margin: 0 auto;
-            background-color: $background-blue;
+            background-color: $secondary-background-color;
 
             @include below-width($cutoff) {
                 max-width: 100%;
@@ -84,7 +84,7 @@
         width: 45%;
         height: 30rem;
         margin: 2rem auto;
-        background-color: $background-blue;
+        background-color: $secondary-background-color;
 
         @include below-width($cutoff) {
             width: 100%;

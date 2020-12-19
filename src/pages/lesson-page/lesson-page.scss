@@ -111,6 +111,10 @@
     }
   }
 
+  &__category {
+    background-color: $secondary-background-color;
+  }
+
   &__red {
     background-color: $background-red;
   }
