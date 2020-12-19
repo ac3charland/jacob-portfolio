@@ -24,4 +24,14 @@ describe('ContactForm', () => {
         expect(component.find(`.${cb}`).length).toEqual(1)
         expect(component.find(`.${cb}__heading`).length).toEqual(0)
     })
+
+    it('shows correct validation copy', () => {
+        const component = render()
+        component.find(`.${cb}__form`).simulate('submit')
+        expect(component.find(`.${cb}__name-error`).text()).toEqual('Please enter a valid name.')
+        expect(component.find(`.${cb}__subject-error`).text()).toEqual('Please enter a subject.')
+        expect(component.find(`.${cb}__email-error`).text()).toEqual('Please enter a valid email.')
+        expect(component.find(`.${cb}__message-error`).text()).toEqual('Please enter a message.')
+    })
+    
 })

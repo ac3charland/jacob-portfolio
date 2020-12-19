@@ -3,15 +3,19 @@ import {Album, Video} from './types'
 export const ROOT_URL = '/'
 export const LESSON_PAGE_URL = '/lessons'
 export const CONTACT_PAGE_URL = '/contact'
+export const CONTACT_SUCCESS_URL = '/contact/success'
 
 // External URLs
 export const ALEX_PORTFOLIO_URL = 'https://www.alexcharland.com'
+export const GOOGLE_PRIVACY_POLICY = 'https://policies.google.com/privacy'
+export const GOOGLE_TERMS = 'https://policies.google.com/terms'
 
 // Section IDs
 export const CALENDAR_ID = 'calendar'
 export const MEDIA_ID = 'media'
 export const LESSON_ID = 'lessons'
 export const CONTACT_ID = 'contact'
+export const CONTACT_SUCCESS_ID = 'contact-success'
 
 // Redux Actions
 export const ON_HOME_PAGE = 'ON_HOME_PAGE'

@@ -1,3 +1,6 @@
+To start: run `node server.js` in one tab and `ns` in another
+https://dev.to/loujaybee/using-create-react-app-with-express
+
 # React Template App
 
 This app is meant to serve as the basis for my future React apps. It has my preferred technologies, testing frameworks, and project structure pre-configured so that I don't have to set up the same boilerplate with every project. If you're curious about my opinions and preferences when it comes to frontend development, this is a great place to look!

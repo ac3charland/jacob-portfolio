@@ -35,6 +35,14 @@
         color: $background-red;
         padding-top: 0.5rem;
     }
+    
+    &__api-error-msg {
+        font-size: $font-size-h5;
+    }
+
+    &__submit-wrapper {
+        display: flex;
+    }
 
     &__submit {
         font-size: $font-size-h5;
@@ -50,5 +58,9 @@
             color: $text-color;
             cursor: pointer;
         }
+    }
+
+    &__captcha-terms {
+        padding-top: 0.5rem;
     }
 }
