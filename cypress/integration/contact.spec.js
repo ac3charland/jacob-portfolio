@@ -7,6 +7,7 @@ import ContactPage from '../page/contact-page'
 context('Lesson Page Contact Form', () => {
     beforeEach(() => {
         cy.server()
+        cy.route('POST', '/api/contact', {msg: 'success'}).as('postMessage')
     })
 
     it('correctly handles user input on lessons page', () => {
@@ -18,58 +19,46 @@ context('Lesson Page Contact Form', () => {
         cy.url().should('contain', '/lessons')
         cy.get(LessonPage.wrapper)
 
-        cy.get(ContactForm.submitButton).click()
+        ContactForm.exercise(LessonPage.wrapper)
+    })
+
+    it('handles reCAPTCHA error', () => {
+        cy.route('POST', '/api/contact', {msg: 'captcha failed'}).as('captchaError')
+        cy.visit('/')
+        cy.get(HomePage.wrapper)
+
+        cy.get(NavBar.link).eq(2).click()
+
+        cy.url().should('contain', '/lessons')
         cy.get(LessonPage.wrapper)
-        cy.get(ContactForm.nameError)
-        cy.get(ContactForm.subjectError)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
 
-        cy.get(ContactForm.nameField).type('Clyde Mother-Lovin\' Stubblefield')
-        cy.get(ContactForm.nameError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
+        ContactForm.complete()
+        cy.wait('@captchaError')
         cy.get(LessonPage.wrapper)
-        cy.get(ContactForm.subjectError)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
+        cy.get(ContactForm.apiError).contains('Our reCaptcha has mistaken you for a bot. Don\'t worry: just try submitting again.')
+    })
 
-        cy.get(ContactForm.subjectField).type('I want to take lessons from you')
-        cy.get(ContactForm.subjectError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
+    it('handles unknown error', () => {
+        cy.route('POST', '/api/contact', {msg: 'unknown error'}).as('unknownError')
+        cy.visit('/')
+        cy.get(HomePage.wrapper)
+
+        cy.get(NavBar.link).eq(2).click()
+
+        cy.url().should('contain', '/lessons')
         cy.get(LessonPage.wrapper)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
 
-        cy.get(ContactForm.emailField).type('clyde')
-        cy.get(ContactForm.emailError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
+        ContactForm.complete()
+        cy.wait('@unknownError')
         cy.get(LessonPage.wrapper)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
-
-        cy.get(ContactForm.emailField).clear().type('clyde@stubblefield')
-        cy.get(ContactForm.emailError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
-        cy.get(LessonPage.wrapper)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
-
-        cy.get(ContactForm.emailField).clear().type('clyde@stubblefield.gov')
-        cy.get(ContactForm.emailError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
-        cy.get(LessonPage.wrapper)
-        cy.get(ContactForm.messageError)
-
-        cy.get(ContactForm.messageField).type('Jake! You\'re the man. I want to study with you.')
-        cy.get(ContactForm.messageError).should('not.exist')
-
-        // TODO: Implement submit functionality
+        cy.get(ContactForm.apiError).contains('An error occurred while sending your message. Please try again.')
     })
 })
 
 context('Contact Page Contact Form', () => {
     beforeEach(() => {
         cy.server()
+        cy.route('POST', '/api/contact', {msg: 'success'}).as('postMessage')
     })
 
     it('correctly handles user input on contact page', () => {
@@ -81,51 +70,38 @@ context('Contact Page Contact Form', () => {
         cy.url().should('contain', '/contact')
         cy.get(ContactPage.wrapper)
 
-        cy.get(ContactForm.submitButton).click()
+        ContactForm.exercise(ContactPage.wrapper)
+    })
+
+    it('handles reCAPTCHA error', () => {
+        cy.route('POST', '/api/contact', {msg: 'captcha failed'}).as('captchaError')
+        cy.visit('/')
+        cy.get(HomePage.wrapper)
+
+        cy.get(NavBar.link).eq(3).click()
+
+        cy.url().should('contain', '/contact')
         cy.get(ContactPage.wrapper)
-        cy.get(ContactForm.nameError)
-        cy.get(ContactForm.subjectError)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
 
-        cy.get(ContactForm.nameField).type('Clyde Mother-Lovin\' Stubblefield')
-        cy.get(ContactForm.nameError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
+        ContactForm.complete()
+        cy.wait('@captchaError')
         cy.get(ContactPage.wrapper)
-        cy.get(ContactForm.subjectError)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
+        cy.get(ContactForm.apiError).contains('Our reCaptcha has mistaken you for a bot. Don\'t worry: just try submitting again.')
+    })
 
-        cy.get(ContactForm.subjectField).type('I want to take lessons from you')
-        cy.get(ContactForm.subjectError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
+    it('handles unknown error', () => {
+        cy.route('POST', '/api/contact', {msg: 'unknown error'}).as('unknownError')
+        cy.visit('/')
+        cy.get(HomePage.wrapper)
+
+        cy.get(NavBar.link).eq(3).click()
+
+        cy.url().should('contain', '/contact')
         cy.get(ContactPage.wrapper)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
 
-        cy.get(ContactForm.emailField).type('clyde')
-        cy.get(ContactForm.emailError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
+        ContactForm.complete()
+        cy.wait('@unknownError')
         cy.get(ContactPage.wrapper)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
-
-        cy.get(ContactForm.emailField).clear().type('clyde@stubblefield')
-        cy.get(ContactForm.emailError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
-        cy.get(ContactPage.wrapper)
-        cy.get(ContactForm.emailError)
-        cy.get(ContactForm.messageError)
-
-        cy.get(ContactForm.emailField).clear().type('clyde@stubblefield.gov')
-        cy.get(ContactForm.emailError).should('not.exist')
-        cy.get(ContactForm.submitButton).click()
-        cy.get(ContactPage.wrapper)
-        cy.get(ContactForm.messageError)
-
-        cy.get(ContactForm.messageField).type('Jake! You\'re the man. I want to study with you.')
-        cy.get(ContactForm.messageError).should('not.exist')
-
-        // TODO: Implement submit functionality
+        cy.get(ContactForm.apiError).contains('An error occurred while sending your message. Please try again.')
     })
 })

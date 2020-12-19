@@ -2,8 +2,34 @@ import React, {useState} from 'react'
 import './contact-form.scss'
 import {validateEmail, validateRequiredString, validateName} from '../../utils/form-validation'
 import Axios from 'axios'
+import {CONTACT_SUCCESS_URL, GOOGLE_PRIVACY_POLICY, GOOGLE_TERMS} from '../../utils/constants'
+import {Redirect} from 'react-router-dom'
+import Spinner from '../spinner/spinner'
 
 const cb = 'form'
+
+declare global {
+    interface Window {
+        grecaptcha: ReCaptchaInstance
+        captchaOnLoad: () => void
+    }
+}
+
+interface ReCaptchaInstance {
+    ready: (cb: () => any) => void
+    execute: (key: string, options: ReCaptchaExecuteOptions) => Promise<string>
+    render: (id: string, options: ReCaptchaRenderOptions) => any
+}
+
+interface ReCaptchaExecuteOptions {
+    action: string
+}
+
+interface ReCaptchaRenderOptions {
+    sitekey: string
+    size: 'invisible'
+}
+
 interface ContactFormProps {
     title?: string
 }
@@ -25,6 +51,10 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
     const [email, setEmail] = useState({value: '', isInvalid: false})
     const [subject, setSubject] = useState({value: '', isInvalid: false})
     const [message, setMessage] = useState({value: '', isInvalid: false})
+    const [success, setSuccess] = useState(false)
+    const [captchaError, setCaptchaError] = useState(false)
+    const [otherError, setOtherError] = useState(false)
+    const [showSpinner, setShowSpinner] = useState(false)
 
 
     const isFormValid = (): boolean => {
@@ -43,24 +73,55 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
         return true
     }
 
+    const sendMessage = (token: string): void => {
+        const body = {
+            name: name.value,
+            email: email.value,
+            subject: subject.value,
+            message: message.value,
+            token,
+        }
+        Axios.post('/api/contact', body)
+            .then(res => {
+                setShowSpinner(false)
+                if (res.data.msg === 'success') {
+                    setSuccess(true)
+                }
+                else if (res.data.msg === 'captcha failed') {
+                    setCaptchaError(true)
+                }
+                else {
+                    setOtherError(true)
+                }
+            })
+            .catch(() => {
+                setShowSpinner(false)
+                setOtherError(true)
+            })
+    }
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
 
         if (isFormValid()) {
-            const body = {
-                name: name.value,
-                email: email.value,
-                subject: subject.value,
-                message: message.value,
-            }
-            Axios.post('/api/contact', body)
-                .then(res => {
-                    // Response stuff
-                })
-                .catch(e => {
-                    // Error handling
-                })
+            window.grecaptcha.ready(() => {
+                setShowSpinner(true)
+                setOtherError(false)
+                setCaptchaError(false)
+                window.grecaptcha.execute(process.env.REACT_APP_PUBLIC_KEY || '', {action: 'contact'})
+                    .then((token: string) => {
+                        sendMessage(token)
+                    })
+                    .catch(() => {
+                        setOtherError(true)
+                        setShowSpinner(false)
+                    })
+            })
         }
+    }
+
+    if (success) {
+        return <Redirect to={CONTACT_SUCCESS_URL} />
     }
 
     return (
@@ -74,7 +135,7 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
                     value={name.value}
                     changeHandler={(e): void => setName({value: e.currentTarget.value, isInvalid: false})}
                     isInvalid={name.isInvalid}
-                    errorMsg='Please enter a name.'
+                    errorMsg='Please enter a valid name.'
                 />
                 <FormElement
                     idString={`${cb}__email`}
@@ -104,9 +165,13 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
                     isInvalid={message.isInvalid}
                     errorMsg='Please enter a message.'
                 />
-                <div className={`${cb}__form-element`}>
+                <div className={`${cb}__submit-wrapper`}>
                     <input className={`${cb}__submit`} type='submit' value='Send Message' />
+                    {showSpinner && <Spinner />}
                 </div>
+                <div className={`${cb}__captcha-terms`}>This site is protected by reCAPTCHA and the Google <a href={GOOGLE_PRIVACY_POLICY}>Privacy Policy</a> and <a href={GOOGLE_TERMS}>Terms of Service</a> apply.</div>
+                {captchaError && <h3 className={`${cb}__error ${cb}__api-error-msg`}>Our reCaptcha has mistaken you for a bot. Don't worry: just try submitting again.</h3>}
+                {otherError && <h3 className={`${cb}__error ${cb}__api-error-msg`}>An error occurred while sending your message. Please try again.</h3>}
             </form>
         </div>
     )

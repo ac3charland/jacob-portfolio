@@ -27,5 +27,6 @@ module.exports = backstop.config({
         cs({label: 'lessons-form-error', onReadyScript: 'trigger-form-error.js', args: {id: '#lessons-link'}}),
         cs({label: 'contact', onReadyScript: 'navigate-to-page.js', args: {id: '#contact-link'}}),
         cs({label: 'contact-page-form-error', onReadyScript: 'trigger-form-error.js', args: {id: '#contact-link'}}),
+        cs({label: 'contact-success', url: '/contact/success'}),
     ]
 })
