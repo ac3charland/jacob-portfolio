@@ -21,6 +21,10 @@ export const CONTACT_SUCCESS_ID = 'contact-success'
 export const ON_HOME_PAGE = 'ON_HOME_PAGE'
 export const LEAVING_HOME_PAGE = 'LEAVING_HOME_PAGE'
 
+export const FETCH_EVENTS = 'FETCH_EVENTS'
+export const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS'
+export const FETCH_EVENTS_FAILURE = 'FETCH_EVENTS_FAILURE'
+
 // Albums
 export const StraightAheadFBlues: Album = {
     isLarge: true,

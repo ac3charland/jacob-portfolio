@@ -75,7 +75,7 @@ app.post('/api/contact', (req, res) => {
 
 app.get('/api/events', (req, res) => {
     Axios.get(`${getStrapiURL()}/events`).then(eventsRes => {
-        const events = eventsRes.data?.events || []
+        const events = eventsRes.data || []
         if (events.length > 0) {
             events
                 .filter(event => {
