@@ -6,11 +6,11 @@ import NavBar from '../../components/nav-bar/nav-bar'
 import Footer from '../../components/footer/footer'
 import Calendar from '../../components/calendar/calendar'
 import Media from '../../components/media/media'
-import {onHomePage, leavingHomePage} from '../../actions/navigation'
+import {onHomePage, leavingHomePage} from '../../actions/navigation/navigation'
+import {fetchEvents} from '../../actions/events/fetch-events'
 import ParallaxWrapper from '../../components/parallax-components/parallax-wrapper'
 import ParallaxWindow from '../../components/parallax-components/parallax-window'
 import ParallaxHero from '../../components/parallax-components/parallax-hero'
-import {fetchEvents} from '../../actions/fetch-events'
 
 const cb = 'home'
 
