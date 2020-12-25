@@ -11,7 +11,7 @@ export function events(state = initialState, action: EventsActionTypes): EventsS
             case FETCH_EVENTS:
                 return {...state, fetchingEvents: true}
             case FETCH_EVENTS_SUCCESS:
-                return {...state, fetchingEvents: false, events: action.data}
+                return {...state, fetchingEvents: false, events: action.data, fetched: true}
             case FETCH_EVENTS_FAILURE:
                 return {...state, fetchingEvents: false, fetchEventError: true}
         }

@@ -1,5 +1,4 @@
 import {Event} from '../../reducers/events/types'
-import {BaseAction} from '../../utils/types'
 
 export const FETCH_EVENTS = 'FETCH_EVENTS'
 export const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS'

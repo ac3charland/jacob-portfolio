@@ -1,35 +1,41 @@
+import configureStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
+import {Provider} from 'react-redux'
 import Calendar from './calendar'
 
+const mockStore = configureStore([thunk])
 const cb = 'calendar'
 
 describe('Calendar', () => {
-    let props, render
+    let props, render, store, mockState
 
     beforeEach(() => {
-        props = {
-            events: [
-                {
-                    title: 'Left Field Quartet',
-                    venue: 'Art Inn',
-                    address: '123 Main St',
-                    city: 'Madison',
-                    state: 'WI',
-                    zip: '12345',
-                    dateTime: '2020-08-01T04:00:00.000Z',
-                },
-                {
-                    title: 'Thompson Springs',
-                    venue: 'High Noon Saloon',
-                    address: '123 Main St',
-                    city: 'Madison',
-                    state: 'WI',
-                    zip: '12345',
-                    dateTime: '2020-08-05T04:00:00.000Z',
-                },
-            ],
+        mockState = {
+            events: {
+                events: [
+                    {
+                        title: 'Left Field Quartet',
+                        venue: 'Art Inn',
+                        address: '123 Main St',
+                        city: 'Madison',
+                        state: 'WI',
+                        zip: '12345',
+                        dateTime: '2020-08-01T04:00:00.000Z',
+                    },
+                    {
+                        title: 'Thompson Springs',
+                        venue: 'High Noon Saloon',
+                        address: '123 Main St',
+                        city: 'Madison',
+                        state: 'WI',
+                        zip: '12345',
+                        dateTime: '2020-08-05T04:00:00.000Z',
+                    },
+                ],
+            },
         }
-
-        render = (changedProps = {}) => mount(<Calendar {...props} {...changedProps} />)
+        store = mockStore(mockState)
+        render = (changedProps = {}) => mount(<Provider store={store}><Calendar {...props} {...changedProps} /></Provider>)
     })
 
     it('correctly displays calendar events', () => {
@@ -55,7 +61,7 @@ describe('Calendar', () => {
     })
 
     it('doesn\'t crash with empty props', () => {
-        props = {}
+        store = mockStore({events: {events: []}})
         const component = render()
         expect(component.find(`.${cb}`).length).toEqual(1)
         expect(component.find(`.${cb}__event`).length).toEqual(0)

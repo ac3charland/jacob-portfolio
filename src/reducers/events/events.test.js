@@ -15,7 +15,7 @@ describe('Events Reducer', () => {
 
     it('sets fetchingEvents flag to false and adds events to state when FETCH_EVENTS_SUCCESS is received', () => {
         const newState = events({...state, fetchingEvents: true}, {type: FETCH_EVENTS_SUCCESS, data: ['a', 'b', 'c']})
-        expect(newState).toEqual({a: 'b', fetchingEvents: false, events: ['a', 'b', 'c']})
+        expect(newState).toEqual({a: 'b', fetchingEvents: false, events: ['a', 'b', 'c'], fetched: true})
     })
 
     it('sets fetchingEvents flag to false and fetchEventError flag to true when FETCH_EVENTS_FAILURE is received', () => {

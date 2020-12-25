@@ -15,7 +15,7 @@ const Calendar = () => {
                 <h2 id={CALENDAR_ID} tabIndex={-1} className={`${cb}__heading`}>
                     <span className={`${cb}__heading-background`}>Calendar</span>
                 </h2>
-                {events ?
+                {events.length > 0 ?
                     events.map((event, idx) => <Event key={`${cb}-event-${idx}`} {...event} />) :
                     <h3 className={`${cb}__no-events`}>No events scheduled</h3>
                 }

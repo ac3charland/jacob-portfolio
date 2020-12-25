@@ -8,7 +8,3 @@ export interface Album {
 export interface Video {
     src: string
 }
-
-export interface BaseAction {
-    type: string
-}

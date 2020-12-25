@@ -11,5 +11,6 @@ export interface Event {
 export interface EventsState {
     fetchingEvents?: boolean
     fetchEventError?: boolean
+    fetched?: boolean
     events: Event[]
 }
