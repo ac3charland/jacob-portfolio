@@ -8,6 +8,10 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
+const getStrapiURL = (path = '') => {
+    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`
+}
+
 const transport = {
     host: 'outlook.office365.com',
     auth: {
@@ -34,9 +38,6 @@ app.get('/ping', function (req, res) {
     return res.send('pong')
 })
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
 
 app.post('/api/contact', (req, res) => {
     const {name, email, subject, message, token} = req.body
@@ -70,6 +71,30 @@ app.post('/api/contact', (req, res) => {
             })
         }
     })
+})
+
+app.get('/api/events', (req, res) => {
+    Axios.get(`${getStrapiURL()}/events`).then(eventsRes => {
+        const events = eventsRes.data || []
+        if (events.length > 0) {
+            events
+                .filter(event => {
+                    // Filter out events from the past
+                    return true
+                })
+                .map(event => {
+                    // Filter out unnecessary key value pairs (id, created/modified timestamps)
+                    // Put in reducer?
+                    return event
+                })
+        }
+
+        res.json({events})
+    })
+})
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 app.get('*', (req, res) => {

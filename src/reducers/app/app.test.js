@@ -1,5 +1,5 @@
 import {app} from './app'
-import {ON_HOME_PAGE, LEAVING_HOME_PAGE} from '../utils/constants'
+import {ON_HOME_PAGE, LEAVING_HOME_PAGE} from '../../utils/constants'
 
 describe('App Reducer', () => {
     let state

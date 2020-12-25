@@ -9,6 +9,8 @@ const NavBar = () => {
 
     const [menuOpen, setMenu] = useState(false)
     const onHomePage = useSelector(state => state.app.onHomePage)
+    const events = useSelector(state => state.events.events)
+    const shouldShowCalendarLink = events.length > 0
 
     const toggleMenu = () => {
         setMenu(!menuOpen)
@@ -24,11 +26,11 @@ const NavBar = () => {
                 <button className={`icon ${menuCSS}`} onClick={toggleMenu}><i className={`fa ${menuIcon}`}></i></button>
                 {onHomePage ?
                     <React.Fragment>
-                        <button id={'calendar-link'} className={`${cb}__link ${menuCSS}`} onClick={() => scrollToElement(CALENDAR_ID)}>Calendar</button>
+                        {shouldShowCalendarLink && <button id={'calendar-link'} className={`${cb}__link ${menuCSS}`} onClick={() => scrollToElement(CALENDAR_ID)}>Calendar</button>}
                         <button id={'media-link'} className={`${cb}__link ${menuCSS}`} onClick={() => scrollToElement(MEDIA_ID)}>Media</button>
                     </React.Fragment> :
                     <React.Fragment>
-                        <a id={'calendar-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + CALENDAR_ID}>Calendar</a>
+                        {shouldShowCalendarLink && <a id={'calendar-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + CALENDAR_ID}>Calendar</a>}
                         <a id={'media-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + MEDIA_ID}>Media</a>
                     </React.Fragment>
                 }

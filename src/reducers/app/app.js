@@ -1,4 +1,4 @@
-import {ON_HOME_PAGE, LEAVING_HOME_PAGE} from '../utils/constants'
+import {ON_HOME_PAGE, LEAVING_HOME_PAGE} from '../../utils/constants'
 
 export function app(state = {}, action = {}) {
     switch(action.type) {

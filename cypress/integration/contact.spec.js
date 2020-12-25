@@ -14,7 +14,7 @@ context('Lesson Page Contact Form', () => {
         cy.visit('/')
         cy.get(HomePage.wrapper)
 
-        cy.get(NavBar.link).eq(2).click()
+        cy.get(NavBar.link).eq(1).click()
 
         cy.url().should('contain', '/lessons')
         cy.get(LessonPage.wrapper)
@@ -27,7 +27,7 @@ context('Lesson Page Contact Form', () => {
         cy.visit('/')
         cy.get(HomePage.wrapper)
 
-        cy.get(NavBar.link).eq(2).click()
+        cy.get(NavBar.link).eq(1).click()
 
         cy.url().should('contain', '/lessons')
         cy.get(LessonPage.wrapper)
@@ -43,7 +43,7 @@ context('Lesson Page Contact Form', () => {
         cy.visit('/')
         cy.get(HomePage.wrapper)
 
-        cy.get(NavBar.link).eq(2).click()
+        cy.get(NavBar.link).eq(1).click()
 
         cy.url().should('contain', '/lessons')
         cy.get(LessonPage.wrapper)
@@ -65,7 +65,7 @@ context('Contact Page Contact Form', () => {
         cy.visit('/')
         cy.get(HomePage.wrapper)
 
-        cy.get(NavBar.link).eq(3).click()
+        cy.get(NavBar.link).eq(2).click()
 
         cy.url().should('contain', '/contact')
         cy.get(ContactPage.wrapper)
@@ -78,7 +78,7 @@ context('Contact Page Contact Form', () => {
         cy.visit('/')
         cy.get(HomePage.wrapper)
 
-        cy.get(NavBar.link).eq(3).click()
+        cy.get(NavBar.link).eq(2).click()
 
         cy.url().should('contain', '/contact')
         cy.get(ContactPage.wrapper)
@@ -94,7 +94,7 @@ context('Contact Page Contact Form', () => {
         cy.visit('/')
         cy.get(HomePage.wrapper)
 
-        cy.get(NavBar.link).eq(3).click()
+        cy.get(NavBar.link).eq(2).click()
 
         cy.url().should('contain', '/contact')
         cy.get(ContactPage.wrapper)
