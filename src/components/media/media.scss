@@ -20,6 +20,15 @@
         text-align: center;
         margin-bottom: 2rem;
         outline: none;
+        color: white;
+
+        &-background {
+            padding: 0 3rem;
+            background-image: url("../../images/brush-stroke-banner-6-red.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position-x: center;
+        }
     }
 
     &__album-section {

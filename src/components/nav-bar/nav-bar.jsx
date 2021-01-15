@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import PropTypes from 'prop-types'
 import {useSelector} from 'react-redux'
 import './nav-bar.scss'
 import {LESSON_PAGE_URL, CONTACT_PAGE_URL, CALENDAR_ID, MEDIA_ID, ROOT_URL} from '../../utils/constants'
@@ -26,19 +27,49 @@ const NavBar = () => {
                 <button className={`icon ${menuCSS}`} onClick={toggleMenu}><i className={`fa ${menuIcon}`}></i></button>
                 {onHomePage ?
                     <React.Fragment>
-                        {shouldShowCalendarLink && <button id={'calendar-link'} className={`${cb}__link ${menuCSS}`} onClick={() => scrollToElement(CALENDAR_ID)}>Calendar</button>}
-                        <button id={'media-link'} className={`${cb}__link ${menuCSS}`} onClick={() => scrollToElement(MEDIA_ID)}>Media</button>
+                        {shouldShowCalendarLink && (
+                            <PaintStrokeWrapper>
+                                <button id={'calendar-link'} className={`${cb}__link ${menuCSS}`} onClick={() => scrollToElement(CALENDAR_ID)}>Calendar</button>
+                            </PaintStrokeWrapper>
+                        )}
+                        <PaintStrokeWrapper>
+                            <button id={'media-link'} className={`${cb}__link ${menuCSS}`} onClick={() => scrollToElement(MEDIA_ID)}>Media</button>
+                        </PaintStrokeWrapper>
                     </React.Fragment> :
                     <React.Fragment>
-                        {shouldShowCalendarLink && <a id={'calendar-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + CALENDAR_ID}>Calendar</a>}
-                        <a id={'media-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + MEDIA_ID}>Media</a>
+                        {shouldShowCalendarLink && (
+                            <PaintStrokeWrapper>
+                                <a id={'calendar-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + CALENDAR_ID}>)Calendar</a>
+                            </PaintStrokeWrapper>
+                        )}
+                        <PaintStrokeWrapper>
+                            <a id={'media-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + MEDIA_ID}>Media</a>
+                        </PaintStrokeWrapper>
                     </React.Fragment>
                 }
-                <a id={'lessons-link'} className={`${cb}__link ${menuCSS}`} href={LESSON_PAGE_URL}>Lessons</a>
-                <a id={'contact-link'} className={`${cb}__link ${menuCSS}`} href={CONTACT_PAGE_URL}>Contact</a>
+                <PaintStrokeWrapper>
+                    <a id={'lessons-link'} className={`${cb}__link ${menuCSS}`} href={LESSON_PAGE_URL}>Lessons</a>
+                </PaintStrokeWrapper>
+                <PaintStrokeWrapper>
+                    <a id={'contact-link'} className={`${cb}__link ${menuCSS}`} href={CONTACT_PAGE_URL}>Contact</a>
+                </PaintStrokeWrapper>
             </div>
         </div>
     )
+}
+
+const PaintStrokeWrapper = props => {
+    return (
+        <div className={`${cb}__paint-stroke-wrapper`}>
+            {props.children}
+            <div className={`${cb}__paint-stroke-cover`} />
+            <div className={`${cb}__paint-stroke`} />
+        </div>
+    )
+}
+
+PaintStrokeWrapper.propTypes = {
+    children: PropTypes.element,
 }
 
 const scrollToElement = id => {
