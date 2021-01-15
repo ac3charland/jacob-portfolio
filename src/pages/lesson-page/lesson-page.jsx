@@ -41,9 +41,9 @@ const LessonPage = () => {
                             <div className={`${cb}__column`}>
                                 <h3>Piano</h3>
                                 <ul>
+                                    <li className={`${cb}__category`}>Beginner</li>
                                     <li className={`${cb}__category`}>Classical</li>
                                     <li className={`${cb}__category`}>Jazz/Blues</li>
-                                    <li className={`${cb}__category`}>Rock</li>
                                 </ul>
                             </div>
                         </div>
