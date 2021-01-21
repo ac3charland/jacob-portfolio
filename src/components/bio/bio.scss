@@ -2,8 +2,8 @@
 
 .bio {
     @include content-wrapper;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 
     @include small-screen {
         padding-top: 1rem;
@@ -27,7 +27,7 @@
         width: $album-width;
         max-width: 100%;
         height: $album-width;
-        margin: 1.9rem auto 0;
+        margin: 1.9rem 8rem 0 auto;
         background-color: $background-red;
     }
 
@@ -36,7 +36,6 @@
     }
 
     &__bio-column {
-        margin-left: 8rem;
         font-family: $serif;
 
         @include small-screen {
@@ -59,18 +58,14 @@
         margin-bottom: 1rem;
         text-align: left;
         display: inline;
-        font-weight: 300;
+        font-weight: 400;
         font-family: $sans-serif;
-        background-image: url("../../images/brush-stroke-banner-6-red.png");
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position-x: left;
-        color: white;
-        padding: 0 4rem;
 
         @include small-screen {
             font-size: $font-size-h4;
-            display: block;
         }
     }
 

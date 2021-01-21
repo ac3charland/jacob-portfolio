@@ -26,7 +26,9 @@ const LessonPage = () => {
                         <img className={`${cb}__photo`} src={LessonImage} alt='Jacob Bicknase in front of piano' />
                     </div>
                     <div className={`${cb}__form-wrapper`}>
-                        <h2 id={LESSON_ID} tabIndex={-1} className={`${cb}__heading`}>Lessons</h2>
+                        <h2 id={LESSON_ID} tabIndex={-1} className={`${cb}__heading`}>
+                            <span className={`${cb}__heading-background`}>Lessons</span>
+                        </h2>
                         <p className={`${cb}__para`}><strong>Currently accepting students of all ages in piano and percussion.</strong></p>
                         <p className={`${cb}__para ${cb}__para-rates`}>Rates are <strong>$40/hour</strong> or <strong>$25/half hour</strong></p>
                         <div className={`${cb}__flex-columns`}>
@@ -41,9 +43,9 @@ const LessonPage = () => {
                             <div className={`${cb}__column`}>
                                 <h3>Piano</h3>
                                 <ul>
+                                    <li className={`${cb}__category`}>Beginner</li>
                                     <li className={`${cb}__category`}>Classical</li>
                                     <li className={`${cb}__category`}>Jazz/Blues</li>
-                                    <li className={`${cb}__category`}>Rock</li>
                                 </ul>
                             </div>
                         </div>
@@ -51,7 +53,7 @@ const LessonPage = () => {
                     </div>
                 </div>
                 <Footer />
-            </div> 
+            </div>
         </div>
     )
 }

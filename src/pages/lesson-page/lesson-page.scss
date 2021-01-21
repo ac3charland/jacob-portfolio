@@ -4,7 +4,7 @@
   .flex {
     background-color: $primary-background-color;
   }
-  
+
   &__page-wrapper {
     display: flex;
     margin: 0 auto;
@@ -32,6 +32,16 @@
     font-size: $font-size-h2;
     margin-bottom: 2rem;
     outline: none;
+    font-weight: 300;
+    color: white;
+
+    &-background {
+      padding: 0 3rem;
+      background-image: url("../../images/brush-stroke-banner-7-red.png");
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position-x: center;
+    }
 
     @include small-screen {
       font-size: $font-size-h3;
@@ -86,16 +96,14 @@
 
     li {
       font-size: $font-size-h5;
-      margin: 1rem 0;
-      padding: 1rem 2rem;
-      color: white;
-      @include transition(all 0.2s);
-
-      &:hover {
-        margin-left: 2rem;
-        padding-right: 0;
+      padding-bottom: 2rem;
+      margin: 2rem 8rem 0 2rem;
+      border-bottom: 1px solid black;
+      
+      &:last-child {
+        border-bottom: none;
       }
-
+      
       @include small-screen {
         font-size: $font-size-h6;
       }
@@ -109,26 +117,6 @@
         margin-top: 2rem;
       }
     }
-  }
-
-  &__category {
-    background-color: $secondary-background-color;
-  }
-
-  &__red {
-    background-color: $background-red;
-  }
-
-  &__green {
-    background-color: $background-green;
-  }
-
-  &__yellow {
-    background-color: $background-yellow;
-  }
-
-  &__blue {
-    background-color: $background-blue;
   }
 
   &__photo-wrapper {
