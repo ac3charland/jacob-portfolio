@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {useSelector} from 'react-redux'
 import './nav-bar.scss'
@@ -22,7 +23,7 @@ const NavBar = () => {
 
     return (
         <div className={cb}>
-            <a className={`${cb}__home`} href='/'><h1 className={`${cb}__heading`}>JACOB BICKNASE</h1></a>
+            <Link className={`${cb}__home`} to='/'><h1 className={`${cb}__heading`}>JACOB BICKNASE</h1></Link>
             <div className={`${cb}__links ${menuCSS}`}>
                 <button className={`icon ${menuCSS}`} onClick={toggleMenu}><i className={`fa ${menuIcon}`}></i></button>
                 {onHomePage ?
@@ -39,19 +40,19 @@ const NavBar = () => {
                     <React.Fragment>
                         {shouldShowCalendarLink && (
                             <PaintStrokeWrapper>
-                                <a id={'calendar-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + CALENDAR_ID}>)Calendar</a>
+                                <Link id={'calendar-link'} className={`${cb}__link ${menuCSS}`} to={ROOT_URL + '#' + CALENDAR_ID}>Calendar</Link>
                             </PaintStrokeWrapper>
                         )}
                         <PaintStrokeWrapper>
-                            <a id={'media-link'} className={`${cb}__link ${menuCSS}`} href={ROOT_URL + '#' + MEDIA_ID}>Media</a>
+                            <Link id={'media-link'} className={`${cb}__link ${menuCSS}`} to={ROOT_URL + '#' + MEDIA_ID}>Media</Link>
                         </PaintStrokeWrapper>
                     </React.Fragment>
                 }
                 <PaintStrokeWrapper>
-                    <a id={'lessons-link'} className={`${cb}__link ${menuCSS}`} href={LESSON_PAGE_URL}>Lessons</a>
+                    <Link id={'lessons-link'} className={`${cb}__link ${menuCSS}`} to={LESSON_PAGE_URL}>Lessons</Link>
                 </PaintStrokeWrapper>
                 <PaintStrokeWrapper>
-                    <a id={'contact-link'} className={`${cb}__link ${menuCSS}`} href={CONTACT_PAGE_URL}>Contact</a>
+                    <Link id={'contact-link'} className={`${cb}__link ${menuCSS}`} to={CONTACT_PAGE_URL}>Contact</Link>
                 </PaintStrokeWrapper>
             </div>
         </div>
