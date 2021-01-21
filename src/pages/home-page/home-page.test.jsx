@@ -4,6 +4,7 @@ import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import Calendar from '../../components/calendar/calendar'
 import ParallaxWindow from '../../components/parallax-components/parallax-window'
+jest.mock('../../components/nav-bar/nav-bar', () => () => <></>)
 
 const mockStore = configureStore([thunk])
 const cb = 'home'

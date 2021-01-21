@@ -49,7 +49,6 @@ context('Page Navigation', () => {
         cy.get(NavBar.homeLink).click()
         cy.url().should('contain', '/')
         cy.get(HomePage.wrapper)
-        cy.wait('@getEvents')
 
         cy.get(NavBar.link).eq(3).click()
         cy.url().should('contain', '/contact')
@@ -59,11 +58,9 @@ context('Page Navigation', () => {
         cy.go('back')
         cy.url().should('contain', '/')
         cy.get(HomePage.wrapper)
-        cy.wait('@getEvents')
     })
 
-    // TODO - Skipping for now because Calendar state is not persisting between page loads
-    it.skip('navigates from lesson page to proper pages with navbar links', () => {
+    it('navigates from lesson page to proper pages with navbar links', () => {
         cy.visit('/lessons')
         cy.get(LessonPage.wrapper)
 
@@ -94,8 +91,7 @@ context('Page Navigation', () => {
         cy.get(LessonPage.id).should('have.focus')
     })
 
-    // TODO - Skipping for now because Calendar state is not persisting between page loads
-    it.skip('navigates from contact page to proper pages with navbar links', () => {
+    it('navigates from contact page to proper pages with navbar links', () => {
         cy.visit('/contact')
         cy.get(ContactPage.wrapper)
         cy.get(ContactPage.id).should('have.focus')
