@@ -25,6 +25,10 @@
     &:hover,
     &:focus {
       @include scale(1.1);
+
+      @include small-screen {
+        @include scale(1);
+      }
     }
   }
 
@@ -35,13 +39,16 @@
   &__paint-stroke-wrapper {
     position: relative;
     margin-left: 3rem;
-    padding: 0 0.7rem;
 
     &:hover {
       .navbar__paint-stroke-cover {
         width: 0%;
         left: initial;
         right: 0;
+
+        @include small-screen {
+          width: 100%;
+        }
       }
     }
   }
@@ -55,15 +62,15 @@
     bottom: 0;
     width: 100%;
     @include transition(width 0.3s);
-
   }
 
   &__paint-stroke {
     z-index: 1;
-    background-image: url("../../images/brush-stroke-banner-6-red.png");
+    background-image: url("../../images/brush-stroke-banner-7-red.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position-x: right;
+    background-position-y: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -78,8 +85,9 @@
     font-size: $font-size-large;
     font-family: $sans-serif;
     text-decoration: none;
-    @include transition(color 0.3s);
-    height: 100%;
+    @include transition(color 0.2s);
+    padding: 0.5rem 2rem;
+    display: block;
 
     &:focus {
       outline: 1px solid black;

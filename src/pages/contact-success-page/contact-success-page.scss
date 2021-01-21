@@ -15,6 +15,16 @@
         font-size: $font-size-h2;
         margin: 2rem 0;
         outline: none;
+        font-weight: 300;
+        color: white;
+
+        &-background {
+            padding: 0 3rem;
+            background-image: url("../../images/brush-stroke-banner-7-red.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position-x: center;
+        }
 
         @include small-screen {
             font-size: $font-size-h3;
@@ -28,5 +38,19 @@
         @include small-screen {
             font-size: $font-size-h5;
         }
+    }
+
+    &__flex {
+        display: flex;
+    }
+
+    &__left {
+        min-width: 40%;
+        padding-right: 8rem;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 90rem;
     }
 }

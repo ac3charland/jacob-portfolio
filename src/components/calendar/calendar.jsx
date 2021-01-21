@@ -26,8 +26,10 @@ const Calendar = () => {
 
 const Event = ({title, venue, address, city, state, zip, dateTime}) => (
     <div className={`${cb}__event`}>
-        <h3 className={`${cb}__event-heading`}>{title}</h3>
-        <h4 className={`${cb}__event-date-time`}>{moment(dateTime).format('dddd, MMMM Do, h:mm a')}</h4>
+        <div className={`${cb}__event-title-wrapper`}>
+            <h3 className={`${cb}__event-heading`}>{title}</h3>
+            <h4 className={`${cb}__event-date-time`}>{moment(dateTime).format('dddd, MMMM Do, h:mm a')}</h4>
+        </div>
         <div className={`${cb}__event-venue-wrapper`}>
             <h4 className={`${cb}__event-venue`}>{venue}</h4>
             <h4 className={`${cb}__event-address`}>{address}</h4>

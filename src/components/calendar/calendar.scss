@@ -16,7 +16,7 @@
 
         &-background {
             padding: 0 3rem;
-            background-image: url("../../images/brush-stroke-banner-6-red.png");
+            background-image: url("../../images/brush-stroke-banner-7-red.png");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             background-position-x: center;
@@ -24,11 +24,16 @@
     }
 
     &__event {
-        background-color: $secondary-background-color;
+        border-bottom: 1px solid black;
         width: 60%;
         margin: 2rem 0;
-        padding: 1rem;
-        color: white;
+        padding: 1rem 1rem 3rem;
+        display: flex;
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 1rem;
+        }
 
         @include small-screen {
             width: 100%;
@@ -46,13 +51,27 @@
             font-family: $serif;
         }
 
+        &-date-time {
+            @include small-screen {
+                font-size: $font-size-large;
+                padding-top: 1rem;
+            }
+        }
+
+        &-title-wrapper {
+            flex-grow: 2;
+        }
+
         &-venue-wrapper {
-            margin-top: 1rem;
             text-align: right;
         }
 
         &-address {
             font-weight: 300;
+
+            @include small-screen {
+                font-size: $font-size-h6;
+            }
         }
     }
 }

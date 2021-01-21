@@ -21,14 +21,16 @@ const ContactPage = () => {
             <div className='flex'>
                 <NavBar />
                 <div className={`${cb}__page-wrapper`}>
-                    <h2 id={CONTACT_ID} tabIndex={-1} className={`${cb}__heading`}>Contact</h2>
+                    <h2 id={CONTACT_ID} tabIndex={-1} className={`${cb}__heading`}>
+                        <span className={`${cb}__heading-background`}>Contact</span>
+                    </h2>
                     <div className={`${cb}__form-wrapper`}>
                         <ContactForm />
                     </div>
                 </div>
                 <Footer />
             </div>
-            
+
         </div>
     )
 }
