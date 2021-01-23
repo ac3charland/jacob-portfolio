@@ -1,21 +1,11 @@
 {
-  "short_name": "CHANGE_ME_SHORT_NAME",
-  "name": "CHANGE_ME_FULL_APP_NAME",
+  "short_name": "Jacob Bicknase",
+  "name": "Jacob Bicknase Portfolio",
   "icons": [
     {
-      "src": "CHANGE_ME_favicon.ico",
+      "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
-    },
-    {
-      "src": "CHANGE_ME_logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "CHANGE_ME_logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
     }
   ],
   "start_url": ".",
