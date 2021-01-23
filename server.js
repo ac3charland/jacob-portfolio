@@ -15,8 +15,8 @@ const getStrapiURL = (path = '') => {
 const transport = {
     host: 'outlook.office365.com',
     auth: {
-        user: 'charland@wisc.edu',
-        pass: 'Seriousas2motherfuckers!'
+        user: process.env.HANDLER_EMAIL,
+        pass: process.env.EMAIL_PASS
     }
 }
 const transporter = nodemailer.createTransport(transport)
@@ -44,9 +44,9 @@ app.post('/api/contact', (req, res) => {
     const secret = process.env.SECRET
     const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`
     const mail = {
-        from: 'charland@wisc.edu',
+        from: process.env.HANDLER_EMAIL,
         replyTo: email,
-        to: 'ac3charland@gmail.com',
+        to: process.env.CONTACT_RECEIPT_EMAIL,
         subject,
         text: `From ${name}: ${message}`
     }
@@ -54,7 +54,7 @@ app.post('/api/contact', (req, res) => {
     Axios.post(verifyUrl).then(captchaRes => {
         const {score, success} = captchaRes.data
         if (!success || score < 0.5) {
-            res.json({msg: 'captcha failed', url: req.url, body: req.body})
+            res.json({msg: 'captcha failed', url: req.url, body: req.body, res: captchaRes.data})
         }
         else {
             transporter.sendMail(mail, (err, data) => {
