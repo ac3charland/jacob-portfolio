@@ -10,6 +10,7 @@
     "axios": "^0.21.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "if-env": "^1.0.4",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "nodemailer": "^6.4.16",
@@ -24,7 +25,9 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "start": "BROWSER=none react-scripts start",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "BROWSER=none react-scripts start",
     "start-background": "pm2 start npm -- start",
     "kill-background": "pm2 delete npm",
     "build": "react-scripts build",
