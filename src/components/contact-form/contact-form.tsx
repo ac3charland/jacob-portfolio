@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import './contact-form.scss'
 import {validateEmail, validateRequiredString, validateName} from '../../utils/form-validation'
-import Axios from 'axios'
-import {CONTACT_SUCCESS_URL, GOOGLE_PRIVACY_POLICY, GOOGLE_TERMS} from '../../utils/constants'
+import {API} from 'aws-amplify'
+import {API_NAME, CONTACT_ROUTE, CONTACT_SUCCESS_URL, GOOGLE_PRIVACY_POLICY, GOOGLE_TERMS} from '../../utils/constants'
 import {Redirect} from 'react-router-dom'
 import Spinner from '../spinner/spinner'
 
@@ -73,7 +73,7 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
         return true
     }
 
-    const sendMessage = (token: string): void => {
+    const sendMessage = async (token: string): Promise<void> => {
         const body = {
             name: name.value,
             email: email.value,
@@ -81,23 +81,24 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
             message: message.value,
             token,
         }
-        Axios.post('/api/contact', body)
-            .then(res => {
-                setShowSpinner(false)
-                if (res.data.msg === 'success') {
-                    setSuccess(true)
-                }
-                else if (res.data.msg === 'captcha failed') {
-                    setCaptchaError(true)
-                }
-                else {
-                    setOtherError(true)
-                }
-            })
-            .catch(() => {
-                setShowSpinner(false)
+
+        try {
+            const res = await API.post(API_NAME, CONTACT_ROUTE, {body})
+            setShowSpinner(false)
+            if (res.msg === 'success') {
+                setSuccess(true)
+            }
+            else if (res.msg === 'captcha failed') {
+                setCaptchaError(true)
+            }
+            else {
                 setOtherError(true)
-            })
+            }
+        }
+        catch (err) {
+            setShowSpinner(false)
+            setOtherError(true)
+        }
     }
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {

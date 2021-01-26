@@ -1,0 +1,54 @@
+{
+    "paths": [
+        {
+            "name": "/contact",
+            "lambdaFunction": "contactHandler",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/contact"
+        },
+        {
+            "name": "/events",
+            "lambdaFunction": "eventsHandler",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/events"
+        }
+    ],
+    "resourceName": "api",
+    "apiName": "api",
+    "functionArns": [
+        {
+            "lambdaFunction": "contactHandler"
+        },
+        {
+            "lambdaFunction": "eventsHandler"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-jacobportfolio-dev-73403-authRole",
+        "unAuthRoleName": "amplify-jacobportfolio-dev-73403-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "contactHandler",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "eventsHandler",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

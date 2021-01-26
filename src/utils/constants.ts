@@ -4,6 +4,9 @@ export const ROOT_URL = '/'
 export const LESSON_PAGE_URL = '/lessons'
 export const CONTACT_PAGE_URL = '/contact'
 export const CONTACT_SUCCESS_URL = '/contact/success'
+export const API_NAME = 'api'
+export const CONTACT_ROUTE = '/contact'
+export const EVENTS_ROUTE = '/events'
 
 // External URLs
 export const ALEX_PORTFOLIO_URL = 'https://www.alexcharland.com'
