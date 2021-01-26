@@ -60,7 +60,7 @@ app.post('/contact', function (req, res) {
 
   Axios.post(verifyUrl).then(captchaRes => {
     const {score, success} = captchaRes.data
-    if (!success /* || score < 0.5 */) {
+    if (!success || score < 0.5) {
       res.json({msg: 'captcha failed', url: verifyUrl, body: req.body, res: captchaRes.data})
     }
     else {
