@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
+import Amplify from 'aws-amplify'
+import config from './aws-exports'
 import './index.scss'
 import * as serviceWorker from './serviceWorker'
 import makeStore from './store'
@@ -8,6 +10,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import App from './app'
 
 const store = makeStore()
+Amplify.configure(config)
 
 ReactDOM.render(
   <Provider store={store}>

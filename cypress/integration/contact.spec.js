@@ -5,7 +5,7 @@ import ContactPage from '../page/contact-page'
 context('Lesson Page Contact Form', () => {
     beforeEach(() => {
         cy.server()
-        cy.route('POST', '/api/contact', {msg: 'success'}).as('postMessage')
+        cy.route('POST', '*/contact', {msg: 'success'}).as('postMessage')
     })
 
     it('correctly handles user input on lessons page', () => {
@@ -17,7 +17,7 @@ context('Lesson Page Contact Form', () => {
     })
 
     it('handles reCAPTCHA error', () => {
-        cy.route('POST', '/api/contact', {msg: 'captcha failed'}).as('captchaError')
+        cy.route('POST', '*/contact', {msg: 'captcha failed'}).as('captchaError')
         cy.visit('/lessons')
 
         cy.get(LessonPage.wrapper)
@@ -29,7 +29,7 @@ context('Lesson Page Contact Form', () => {
     })
 
     it('handles unknown error', () => {
-        cy.route('POST', '/api/contact', {msg: 'unknown error'}).as('unknownError')
+        cy.route('POST', '*/contact', {msg: 'unknown error'}).as('unknownError')
         cy.visit('/lessons')
 
         cy.get(LessonPage.wrapper)
@@ -44,7 +44,7 @@ context('Lesson Page Contact Form', () => {
 context('Contact Page Contact Form', () => {
     beforeEach(() => {
         cy.server()
-        cy.route('POST', '/api/contact', {msg: 'success'}).as('postMessage')
+        cy.route('POST', '*/contact', {msg: 'success'}).as('postMessage')
     })
 
     it('correctly handles user input on contact page', () => {
@@ -56,7 +56,7 @@ context('Contact Page Contact Form', () => {
     })
 
     it('handles reCAPTCHA error', () => {
-        cy.route('POST', '/api/contact', {msg: 'captcha failed'}).as('captchaError')
+        cy.route('POST', '*/contact', {msg: 'captcha failed'}).as('captchaError')
         cy.visit('/contact')
 
         cy.get(ContactPage.wrapper)
@@ -68,7 +68,7 @@ context('Contact Page Contact Form', () => {
     })
 
     it('handles unknown error', () => {
-        cy.route('POST', '/api/contact', {msg: 'unknown error'}).as('unknownError')
+        cy.route('POST', '*/contact', {msg: 'unknown error'}).as('unknownError')
         cy.visit('/contact')
 
         cy.get(ContactPage.wrapper)

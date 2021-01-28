@@ -4,6 +4,14 @@ export const ROOT_URL = '/'
 export const LESSON_PAGE_URL = '/lessons'
 export const CONTACT_PAGE_URL = '/contact'
 export const CONTACT_SUCCESS_URL = '/contact/success'
+export const API_NAME = 'api'
+export const CONTACT_ROUTE = '/contact'
+export const EVENTS_ROUTE = '/events'
+
+// Allows AWS to hit Strapi localdev on localhost/1337. 
+// SET TO NULL BEFORE COMMITTING
+// Yes, this is a hack. No, I don't want to come up with anything smarter.
+export const NGROK_PORT = null
 
 // External URLs
 export const ALEX_PORTFOLIO_URL = 'https://www.alexcharland.com'
