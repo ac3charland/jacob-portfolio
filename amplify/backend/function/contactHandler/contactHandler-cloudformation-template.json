@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-jacobportfolio-dev-73403-deployment",
-          "S3Key": "amplify-builds/contactHandler-56515a2b4b4858566251-build.zip"
+          "S3Key": "amplify-builds/contactHandler-2f386a792f376a755942-build.zip"
         }
       }
     },

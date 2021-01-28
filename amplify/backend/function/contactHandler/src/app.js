@@ -16,7 +16,7 @@ var nodemailer = require('nodemailer')
 var Axios = require('axios')
 
 const transport = {
-  host: 'outlook.office365.com',
+  host: process.env.HANDLER_HOST,
   auth: {
     user: process.env.HANDLER_EMAIL,
     pass: process.env.EMAIL_PASS,
