@@ -6,7 +6,7 @@ import ContactPage from '../page/contact-page'
 context('Page Navigation', () => {
     beforeEach(() => {
         cy.server()
-        cy.route('GET', '/api/events', {
+        cy.route('GET', '*/events', {
             events: [
                 {
                     title: 'Left Field Quartet',

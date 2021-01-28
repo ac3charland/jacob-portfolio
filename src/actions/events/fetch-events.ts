@@ -1,15 +1,19 @@
-import Axios from 'axios'
+import {API} from 'aws-amplify'
 import {Dispatch} from 'react'
 import {FETCH_EVENTS, FETCH_EVENTS_FAILURE, FETCH_EVENTS_SUCCESS, EventsActionTypes, DBEvent} from './types'
 import moment from 'moment'
+import {API_NAME, EVENTS_ROUTE, NGROK_PORT} from '../../utils/constants'
 
 export function fetchEvents() {
     return (dispatch: Dispatch<EventsActionTypes>): Promise<void> => {
         dispatch({type: FETCH_EVENTS})
 
-        return Axios.get('/api/events')
+        // For localdev, modify NGROK_PORT constant to allow exposing localhost
+        const customInit = NGROK_PORT ? {queryStringParameters: {ngrokPort: NGROK_PORT}} : null
+
+        return API.get(API_NAME, EVENTS_ROUTE, customInit)
             .then(res => {
-                const rawEvents: DBEvent[] = res.data?.events
+                const rawEvents: DBEvent[] = res.events
                 const events = rawEvents
                     // Filter out dates that have already occurred
                     .filter(event => moment(event.dateTime).isAfter())
