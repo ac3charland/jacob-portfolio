@@ -15,7 +15,7 @@ describe('ContactForm', () => {
     it('renders without crashing', () => {
         const component = render()
         expect(component.find(`.${cb}`).length).toEqual(1)
-        expect(component.find(`.${cb}`).length).toEqual(1)
+        expect(component.find(`.${cb}__heading`).text()).toEqual('Wire me $10,000!')
         expect(component.find(`.${cb}__form`).prop('noValidate')).toEqual(true)
     })
 
