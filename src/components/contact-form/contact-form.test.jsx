@@ -16,6 +16,7 @@ describe('ContactForm', () => {
         const component = render()
         expect(component.find(`.${cb}`).length).toEqual(1)
         expect(component.find(`.${cb}__heading`).text()).toEqual('Wire me $10,000!')
+        expect(component.find(`.${cb}__form`).prop('noValidate')).toEqual(true)
     })
 
     it('suppresses header when no title is provided', () => {
@@ -23,6 +24,11 @@ describe('ContactForm', () => {
         const component = render()
         expect(component.find(`.${cb}`).length).toEqual(1)
         expect(component.find(`.${cb}__heading`).length).toEqual(0)
+    })
+
+    it('has correct type for email', () => {
+        const component = render()
+        expect(component.find(`#${cb}__email`).prop('type')).toEqual('email')
     })
 
     it('shows correct validation copy', () => {

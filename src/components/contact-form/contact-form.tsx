@@ -128,7 +128,7 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
     return (
         <div className={cb}>
             {title && <h2 className={`${cb}__heading`}>{title}</h2>}
-            <form className={`${cb}__form`} onSubmit={handleSubmit}>
+            <form className={`${cb}__form`} onSubmit={handleSubmit} noValidate>
                 <FormElement
                     idString={`${cb}__name`}
                     title='Your Name'
@@ -141,7 +141,7 @@ const ContactForm = (props: ContactFormProps): JSX.Element => {
                 <FormElement
                     idString={`${cb}__email`}
                     title='Email'
-                    type='text'
+                    type='email'
                     value={email.value}
                     changeHandler={(e): void => setEmail({value: e.currentTarget.value, isInvalid: false})}
                     isInvalid={email.isInvalid}
