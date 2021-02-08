@@ -26,10 +26,10 @@ describe('Media', () => {
 
     ;[
         {
-            desc: 'Fond Regards',
-            text: 'Fond Regards by Thompson Springs',
-            src: 'https://bandcamp.com/EmbeddedPlayer/album=2620952132/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/track=1590165644/transparent=true/',
-            href: 'http://thompsonsprings.bandcamp.com/album/fond-regards',
+            desc: 'Undertones',
+            text: 'Undertones by Thompson Springs',
+            src: 'https://bandcamp.com/EmbeddedPlayer/album=1173449194/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/',
+            href: 'https://thompsonsprings.bandcamp.com/album/undertones',
         },
         {
             desc: 'Older Than I Am',

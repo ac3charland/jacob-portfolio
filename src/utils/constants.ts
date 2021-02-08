@@ -37,6 +37,13 @@ export const StraightAheadFBlues: Album = {
     text: 'The Straight-Ahead F Blues by Left Field Quartet',
 }
 
+export const Undertones: Album = {
+    isLarge: false,
+    src: 'https://bandcamp.com/EmbeddedPlayer/album=1173449194/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/',
+    href: 'https://thompsonsprings.bandcamp.com/album/undertones',
+    text: 'Undertones by Thompson Springs',
+}
+
 export const MaybeWeBeDreamin: Album = {
     isLarge: false,
     src: 'https://bandcamp.com/EmbeddedPlayer/album=2620952132/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/track=1590165644/transparent=true/',
