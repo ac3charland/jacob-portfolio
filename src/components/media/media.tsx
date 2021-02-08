@@ -6,12 +6,12 @@ import {
     FreightTrain,
     GenerallySpoken,
     GoldKeyToTheCity,
-    MaybeWeBeDreamin,
     MorningLight,
     OlderThanIAm,
     Situ,
     StraightAheadFBlues,
     MEDIA_ID,
+    Undertones,
 } from '../../utils/constants'
 
 const cb = 'media'
@@ -27,7 +27,7 @@ const Media = (): JSX.Element => (
                     <AlbumWrapper {...StraightAheadFBlues} />
                 </div>
                 <div className={`${cb}__secondary-albums-wrapper`}>
-                    <AlbumWrapper {...MaybeWeBeDreamin} />
+                    <AlbumWrapper {...Undertones} />
                     <AlbumWrapper {...OlderThanIAm} />
                     <AlbumWrapper {...MorningLight} />
                     <AlbumWrapper {...GoldKeyToTheCity} />
