@@ -4,7 +4,6 @@
   position: relative;
   transform-style: preserve-3d;
   height: $hero-image-height;
-  z-index: 2;
   background-color: rgba(0, 0, 0, 0.2);
 
   &__background-layer {

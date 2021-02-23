@@ -2,8 +2,9 @@
 
 .calendar {
     @include content-wrapper;
-
+    
     &__content-wrapper {
+        min-height: 40rem;
         padding: 4rem 0;
     }
 
