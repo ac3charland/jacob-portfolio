@@ -4,11 +4,10 @@
   position: relative;
   transform-style: preserve-3d;
   height: $hero-image-height;
-  background-color: rgba(0, 0, 0, 0.2);
-
+  background-color: rgba(0, 0, 0, 0.3);
+  
   &__background-layer {
     transform: translateZ(-300px) scale(2.5);
-    @include transition(background-image 0.2s ease-in-out);
     position: absolute;
     top: -5vh;
     bottom: 0;
@@ -19,6 +18,11 @@
     background-position-x: center;
     background-position-y: 0;
     background-image: url("../../images/hero-bw.jpeg");
+    @include transition(background-image 0.2s ease-in-out);
+
+    @include small-screen {
+      background-position-x: 60%;
+    }
   }
 
   &__hero-title-wrapper {
@@ -28,18 +32,24 @@
     height: 100%;
     padding-bottom: 4vh;
     box-sizing: border-box;
+
+    @include small-screen {
+      justify-content: flex-end;
+      padding-bottom: 12vh;
+    }
   }
 
   &__hero-title {
     color: white;
     text-align: left;
-    font-size: 4vw;
+    font-size: calc(3.5rem + 2vw);
     font-weight: 300;
     padding-left: 4rem;
 
     @include small-screen {
-      font-size: $font-size-h3;
-      padding-left: 2rem;
+      font-size: calc(0.5rem + 8vw);;
+      padding-left: 0;
+      text-align: center;
     }
   }
 }
