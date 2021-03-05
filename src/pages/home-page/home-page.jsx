@@ -20,7 +20,7 @@ const HomePage = () => {
     const events = useSelector(state => state.events.events)
     const [heroZIndex, setHeroZIndex] = useState(4)
     const [flipWindows, setFlipWindows] = useState(false)
- 
+
     useEffect(() => {
         dispatch(onHomePage())
         scrollToElement()
