@@ -8,6 +8,7 @@
 
   &__background-layer {
     transform: translateZ(-300px) scale(2.5);
+    @include transition(background-image 0.2s ease-in-out);
     position: absolute;
     top: -5vh;
     bottom: 0;
