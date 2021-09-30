@@ -36,8 +36,8 @@ const LessonPage = () => {
                                 <h3>Percussion</h3>
                                 <ul>
                                     <li className={`${cb}__category`}>Drum Set</li>
-                                    <li className={`${cb}__category`}>School Band/Orchestral Percussion</li>
-                                    <li className={`${cb}__category`}>Latin American/Brazilian Percussion</li>
+                                    <li className={`${cb}__category`}>School Band & Orchestral Percussion</li>
+                                    <li className={`${cb}__category`}>Latin American & Brazilian Percussion</li>
                                 </ul>
                             </div>
                             <div className={`${cb}__column`}>
@@ -45,7 +45,7 @@ const LessonPage = () => {
                                 <ul>
                                     <li className={`${cb}__category`}>Beginner</li>
                                     <li className={`${cb}__category`}>Classical</li>
-                                    <li className={`${cb}__category`}>Jazz/Blues</li>
+                                    <li className={`${cb}__category`}>Jazz & Blues</li>
                                 </ul>
                             </div>
                         </div>

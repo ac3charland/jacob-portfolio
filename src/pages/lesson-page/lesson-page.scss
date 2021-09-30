@@ -49,7 +49,8 @@
   }
 
   &__para {
-    font-size: $font-size-h5;
+    font-size: $font-size-h6;
+    font-family: $serif;
 
     @include small-screen {
       font-size: $font-size-large;
@@ -95,17 +96,18 @@
     }
 
     li {
-      font-size: $font-size-h6;
+      font-size: $font-size-large;
       padding-bottom: 1rem;
       margin: 1rem 6rem 0 2rem;
       border-bottom: 1px solid black;
+      font-family: $serif;
       
       &:last-child {
         border-bottom: none;
       }
       
       @include small-screen {
-        font-size: $font-size-large;
+        font-size: $font-size-normal;
       }
     }
 
