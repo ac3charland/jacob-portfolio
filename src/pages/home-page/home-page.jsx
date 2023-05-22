@@ -12,8 +12,8 @@ import ParallaxWindow from '../../components/parallax-components/parallax-window
 import ParallaxHero from '../../components/parallax-components/parallax-hero'
 
 const cb = 'home'
-const heroZIndexThreshold = 737
-const windowFlipThreshold = 1300
+const heroZIndexThreshold = 830
+const windowFlipThreshold = 1748
 
 const HomePage = () => {
     const dispatch = useDispatch()
@@ -29,6 +29,7 @@ const HomePage = () => {
             dispatch(leavingHomePage())
         }
     }, [])
+
 
     useEffect(() => {
         const parallaxContainer = document.querySelector('.home__parallax')

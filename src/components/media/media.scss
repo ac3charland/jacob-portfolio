@@ -44,17 +44,12 @@
     &__secondary-albums-wrapper {
         width: 50%;
         margin: 0 auto;
+        padding: 0 1rem;
 
         @include below-width($cutoff) {
             width: 100%;
             margin-top: 2rem;
         }
-    }
-
-    &__secondary-albums-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
     }
 
     &__album {
