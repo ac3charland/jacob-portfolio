@@ -1,38 +1,72 @@
 {
+  "api": {
+    "api": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "contactHandler"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "eventsHandler"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "function": {
     "contactHandler": {
       "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
+      "service": "Lambda"
     },
     "eventsHandler": {
       "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
+      "service": "Lambda"
     }
   },
-  "api": {
-    "api": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
+  "parameters": {
+    "AMPLIFY_function_contactHandler_deploymentBucketName": {
+      "usedBy": [
         {
           "category": "function",
-          "resourceName": "contactHandler",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        },
+          "resourceName": "contactHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_contactHandler_s3Key": {
+      "usedBy": [
         {
           "category": "function",
-          "resourceName": "eventsHandler",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
+          "resourceName": "contactHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_eventsHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "eventsHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_eventsHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "eventsHandler"
         }
       ]
     }
