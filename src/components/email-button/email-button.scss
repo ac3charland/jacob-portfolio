@@ -1,0 +1,18 @@
+@import "../../globals.scss";
+
+.email-button {
+    font-size: $font-size-h5;
+    background-color: $secondary-background-color;
+    color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    @include transition(0.2s all);
+    text-decoration: none;
+
+    &:hover {
+        background-color: $primary-background-color;
+        color: $text-color;
+        cursor: pointer;
+    }
+}

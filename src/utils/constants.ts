@@ -29,6 +29,12 @@ export const CONTACT_SUCCESS_ID = 'contact-success'
 export const ON_HOME_PAGE = 'ON_HOME_PAGE'
 export const LEAVING_HOME_PAGE = 'LEAVING_HOME_PAGE'
 
+// Spotify Links
+export const BOUQUET = 'https://open.spotify.com/embed/album/04mXunFI7lpD3izfCknNR2?utm_source=generator'
+export const HOMEFIELD = 'https://open.spotify.com/embed/album/4OnnoTnDhlLZV6OPkAOkMR?utm_source=generator'
+export const MAY_DAY = 'https://open.spotify.com/embed/album/4K9YGGkSGYpCEgfQgqiXEE?utm_source=generator'
+export const MORNING_LIGHT = 'https://open.spotify.com/embed/album/1pajZdNzGUkmkfiXxLCjlr?utm_source=generator'
+
 // Albums
 export const StraightAheadFBlues: Album = {
     isLarge: true,
@@ -73,8 +79,8 @@ export const GoldKeyToTheCity: Album = {
 }
 
 // Videos
-export const GenerallySpoken: Video = {
-    src: 'https://www.youtube.com/embed/eN_qReDGJRk',
+export const Etude1: Video = {
+  src: 'https://www.youtube.com/embed/LPU-tDXM7xU',
 }
 
 export const DeadlyStare: Video = {

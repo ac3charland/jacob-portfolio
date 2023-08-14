@@ -20,7 +20,8 @@
   }
 
   &__form-wrapper {
-    margin-left: 15vw;
+    margin-left: 5vw;
+    margin-bottom: 5rem;
     flex-shrink: 2;
 
     @include small-screen {
@@ -122,7 +123,7 @@
   }
 
   &__photo-wrapper {
-    width: 35%;
+    width: 50%;
     min-width: 20rem;
     max-height: 50vh;
 

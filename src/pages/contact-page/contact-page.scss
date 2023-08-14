@@ -2,12 +2,16 @@
 
 .contact {
   &__page-wrapper {
+    display: flex;
     padding: 2rem 4rem;
-    background-color: $primary-background-color;
     flex-grow: 2;
 
     @include small-screen {
       padding: 1rem 2rem;
+    }
+
+    @include small-screen {
+      flex-direction: column-reverse;
     }
   }
 
@@ -40,8 +44,36 @@
     }
   }
 
+  &__services {
+    font-size: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  &__photo-wrapper {
+    width: 35%;
+    min-width: 20rem;
+    max-height: 50vh;
+
+    @include small-screen {
+      display: none;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    max-height: 50vh;
+    margin-top: 2rem;
+    object-fit: cover;
+
+    @include small-screen {
+      padding-top: 0;
+    }
+  }
+
   &__form-wrapper {
-    width: 60%;
+    margin-bottom: 4rem;
+    margin-left: 5vw;
+    flex-shrink: 2;
 
     @include small-screen {
       width: 100%;

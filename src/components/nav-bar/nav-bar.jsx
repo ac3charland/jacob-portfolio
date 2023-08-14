@@ -52,7 +52,7 @@ const NavBar = () => {
                     <Link id={'lessons-link'} className={`${cb}__link ${menuCSS}`} to={LESSON_PAGE_URL}>Lessons</Link>
                 </PaintStrokeWrapper>
                 <PaintStrokeWrapper>
-                    <Link id={'contact-link'} className={`${cb}__link ${menuCSS}`} to={CONTACT_PAGE_URL}>Contact</Link>
+                    <Link id={'contact-link'} className={`${cb}__link ${menuCSS}`} to={CONTACT_PAGE_URL}>Services/Contact</Link>
                 </PaintStrokeWrapper>
             </div>
         </div>
