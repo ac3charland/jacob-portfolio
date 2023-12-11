@@ -59,7 +59,7 @@
       "function": {
         "contactHandler": {
           "deploymentBucketName": "amplify-jacobportfolio-localdev-170912-deployment",
-          "s3Key": "amplify-builds/contactHandler-42384d474b432b747a65-build.zip"
+          "s3Key": "amplify-builds/contactHandler-4167414446644e4c3538-build.zip"
         },
         "eventsHandler": {
           "deploymentBucketName": "amplify-jacobportfolio-localdev-170912-deployment",

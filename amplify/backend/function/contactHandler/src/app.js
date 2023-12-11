@@ -16,8 +16,7 @@ var nodemailer = require('nodemailer')
 var Axios = require('axios')
 
 const transport = {
-  host: process.env.HANDLER_HOST,
-  port: process.env.HANDLER_PORT,
+  service: process.env.HANDLER_HOST,
   auth: {
     user: process.env.HANDLER_USER,
     pass: process.env.HANDLER_PASS,
