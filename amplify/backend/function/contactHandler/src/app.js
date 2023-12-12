@@ -16,10 +16,10 @@ var nodemailer = require('nodemailer')
 var Axios = require('axios')
 
 const transport = {
-  host: process.env.HANDLER_HOST,
+  service: process.env.HANDLER_HOST,
   auth: {
-    user: process.env.HANDLER_EMAIL,
-    pass: process.env.EMAIL_PASS,
+    user: process.env.HANDLER_USER,
+    pass: process.env.HANDLER_PASS,
   },
 }
 const transporter = nodemailer.createTransport(transport)
@@ -51,9 +51,9 @@ app.post('/contact', function (req, res) {
   const secret = process.env.SECRET
   const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`
   const mail = {
-    from: process.env.HANDLER_EMAIL,
+    from: process.env.FROM_EMAIL,
     replyTo: email,
-    to: process.env.CONTACT_RECEIPT_EMAIL,
+    to: process.env.TO_EMAIL,
     subject,
     text: `From ${name}: ${message}`,
   }
@@ -80,15 +80,15 @@ app.post('/contact', function (req, res) {
   })
     .catch(err => {
       res.json({
-        msg: 'There was an error getting a captcha response',
+        msg: "There was an error getting a captcha response",
         err,
         verifyUrl,
         envs: {
-          handlerEmail: process.env.HANDLER_EMAIL,
+          handlerEmail: process.env.FROM_EMAIL,
           contactReceiptEmail: process.env.CONTACT_RECEIPT_EMAIL,
           secret: process.env.SECRET,
         },
-      })
+      });
     })
 })
 
