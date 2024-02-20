@@ -4,7 +4,7 @@ import ServicesImage from '../../images/services.jpg'
 import NavBar from '../../components/nav-bar/nav-bar'
 import Footer from '../../components/footer/footer'
 import {CONTACT_ID} from '../../utils/constants'
-import EmailButton from '../../components/email-button/email-button'
+import ContactForm from '../../components/contact-form/contact-form'
 
 const cb = 'contact'
 
@@ -39,7 +39,7 @@ const ContactPage = () => {
                             <li>Mastering</li>
                             <li>Live Gig Work</li>
                         </ul>
-                        <EmailButton />
+                        <ContactForm />
                     </div>
                 </div>
                 <Footer />

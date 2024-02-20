@@ -35,6 +35,40 @@
       "StackName": "amplify-jacobportfolio-dev-73403",
       "StackId": "arn:aws:cloudformation:us-east-2:918318660533:stack/amplify-jacobportfolio-dev-73403/297bd530-5fdb-11eb-bb69-025d7b8a1796",
       "AmplifyAppId": "dotgcc2hc9n9h"
+    },
+    "categories": {
+      "function": {
+        "contactHandler": {},
+        "eventsHandler": {}
+      }
+    }
+  },
+  "localdev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-jacobportfolio-localdev-170912-authRole",
+      "UnauthRoleArn": "arn:aws:iam::918318660533:role/amplify-jacobportfolio-localdev-170912-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::918318660533:role/amplify-jacobportfolio-localdev-170912-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-jacobportfolio-localdev-170912-deployment",
+      "UnauthRoleName": "amplify-jacobportfolio-localdev-170912-unauthRole",
+      "StackName": "amplify-jacobportfolio-localdev-170912",
+      "StackId": "arn:aws:cloudformation:us-east-2:918318660533:stack/amplify-jacobportfolio-localdev-170912/1408f600-1925-11ee-9ad5-02da76853097",
+      "AmplifyAppId": "d3abhom2ecjebq"
+    },
+    "categories": {
+      "function": {
+        "contactHandler": {
+          "deploymentBucketName": "amplify-jacobportfolio-localdev-170912-deployment",
+          "s3Key": "amplify-builds/contactHandler-4167414446644e4c3538-build.zip"
+        },
+        "eventsHandler": {
+          "deploymentBucketName": "amplify-jacobportfolio-localdev-170912-deployment",
+          "s3Key": "amplify-builds/eventsHandler-58416e67647230797649-build.zip"
+        }
+      },
+      "api": {
+        "api": {}
+      }
     }
   }
 }

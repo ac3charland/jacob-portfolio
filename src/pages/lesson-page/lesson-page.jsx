@@ -2,7 +2,6 @@ import React, {useEffect} from 'react'
 import './lesson-page.scss'
 import LessonImage from '../../images/lessons.jpg'
 import ContactForm from '../../components/contact-form/contact-form'
-import EmailButton from '../../components/email-button/email-button'
 import {LESSON_ID} from '../../utils/constants'
 import NavBar from '../../components/nav-bar/nav-bar'
 import Footer from '../../components/footer/footer'
@@ -65,7 +64,7 @@ const LessonPage = () => {
                             </div>
                         </div>
                         <p className={`${cb}__para ${cb}__para-rates`}>Rates are <strong>$75/hour</strong>, <strong>$60/45 minutes</strong> and <strong>$40/30 minutes</strong>.</p>
-                        <EmailButton />
+                        <ContactForm title={'Let\'s get things started:'} />
                     </div>
                 </div>
                 <Footer />
